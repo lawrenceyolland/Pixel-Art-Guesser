@@ -81,6 +81,17 @@ const makeArt = () => {
     colorPalette.mouseIsOver = false;
   };
 
+  const hoverActiveColor = e => {
+    e.target.style.boxShadow =
+      !colorInput.value === true ? "" : `inset 0 0 20px ${colorInput.value}`;
+    table.style.cursor =
+      !colorInput.value === true ? "not-allowed" : "crosshair";
+  };
+
+  const hoverInactiveColor = e => {
+    e.target.style.boxShadow = "";
+  };
+
   const changeColor = e => {
     e.target.style.backgroundColor = colorInput.value;
   };
@@ -93,13 +104,18 @@ const makeArt = () => {
     }
   };
 
+  const paint = e => {
+    e.preventDefault();
+    if (trigger === true) changeColor(e);
+  };
+
   // Table functions
   const table = document.createElement("table");
   body.append(table);
 
   for (let i = 0; i < 16; i++) {
     let row = document.createElement("tr");
-    row.setAttribute("class", `panel-row-${i}`);
+    row.setAttribute("class", `row-${i}`);
     for (let j = 0; j < 16; j++) {
       let cell = document.createElement("td");
       cell.setAttribute("class", `panel-element-${j}`);
@@ -109,21 +125,22 @@ const makeArt = () => {
   }
 
   let trigger = false;
-
   const cells = document.querySelectorAll("td");
-  cells.forEach(td => td.addEventListener("click", addRemoveColor));
-  cells.forEach(td => td.addEventListener("mousedown", () => (trigger = true)));
-  cells.forEach(td => td.addEventListener("mouseup", () => (trigger = false)));
 
+  // turn off draw when pointer leaves the table
   table.addEventListener("mouseleave", () => (trigger = false));
 
-  cells.forEach(td => {
-    td.addEventListener("mouseenter", e => {
-      e.preventDefault();
-      if (trigger === true) {
-        changeColor(e);
-      }
-    });
-  });
+  // and and remove pixel background color
+  cells.forEach(td => td.addEventListener("click", addRemoveColor));
+
+  // mousedown and mouseover allow for draggable draw behaviour. Mouseup disables this.
+  cells.forEach(td => td.addEventListener("mousedown", () => (trigger = true)));
+  cells.forEach(td => td.addEventListener("mouseup", () => (trigger = false)));
+  cells.forEach(td => td.addEventListener("mouseover", paint));
+
+  // set and reset box shadow hover effect
+  cells.forEach(td => td.addEventListener("mouseenter", hoverActiveColor));
+  cells.forEach(td => td.addEventListener("mouseleave", hoverInactiveColor));
 };
+
 button.addEventListener("click", makeArt);

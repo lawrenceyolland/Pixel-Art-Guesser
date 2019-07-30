@@ -2,13 +2,11 @@ body {
   /* display: flex; */
   /* width: 850px; */
 }
-panel {
-  margin: 0px;
-}
 
 table {
   border-spacing:0; /* Removes cell spacing */
   border-collapse: collapse;
+  border: 1px solid grey;
 }
 
 td {
@@ -17,9 +15,13 @@ td {
   height: 20px;
   float: left;
   padding: 0px;
-  margin: 0px;
+  margin: 1px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+td:hover {
   border: 1px solid grey;
-  border-radius:2px;
+  /* box-shadow: ""; */
 }
 
 /* Color Picker */
