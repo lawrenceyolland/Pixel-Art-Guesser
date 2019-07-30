@@ -1,15 +1,21 @@
 // write js here
 const body = document.querySelector("body");
-const button = document.createElement("button");
-body.append(button);
-button.innerText = "show sketch pad";
+const showButton = document.createElement("button");
+showButton.setAttribute("class", "show-pixel-pad-button");
+showButton.innerText = "show sketch pad";
+body.append(showButton);
 
 const makeArt = () => {
-  body.removeChild(button);
+  body.removeChild(showButton);
+
+  const pixelArtContainer = document.createElement("pixelArtContainer");
+  const imageShowcase = document.createElement("imageShowcase");
+  imageShowcase.setAttribute("class", "image-showcase");
+  body.append(pixelArtContainer, imageShowcase);
 
   // Form functions
   const form = document.createElement("form");
-  body.append(form);
+  pixelArtContainer.append(form);
 
   const input = document.createElement("input");
   input.setAttribute("type", "text");
@@ -49,16 +55,116 @@ const makeArt = () => {
     );
   };
 
-
   const showColorPalette = () => {
+    colorPalette.innerHTML = "";
     colorPalette.style.display = "block";
-    const swatches = ["#000000", "#191919", "#323232", "#4b4b4b", "#646464", "#7d7d7d", "#969696", "#afafaf", "#c8c8c8", "#e1e1e1", "#ffffff", "#820000", "#9b0000", "#b40000", "#cd0000", "#e60000", "#ff0000", "#ff1919", "#ff3232", "#ff4b4b", "#ff6464", "#ff7d7d", "#823400", "#9b3e00", "#b44800", "#cd5200", "#e65c00", "#ff6600", "#ff7519", "#ff8532", "#ff944b", "#ffa364", "#ffb27d", "#828200", "#9b9b00", "#b4b400", "#cdcd00", "#e6e600", "#ffff00", "#ffff19", "#ffff32", "#ffff4b", "#ffff64", "#ffff7d", "#003300", "#004d00", "#008000", "#00b300", "#00cc00", "#00e600", "#1aff1a", "#4dff4d", "#66ff66", "#80ff80", "#b3ffb3", "#001a4d", "#002b80", "#003cb3", "#004de6", "#0000ff", "#0055ff", "#3377ff", "#4d88ff", "#6699ff", "#80b3ff", "#b3d1ff", "#003333", "#004d4d", "#006666", "#009999", "#00cccc", "#00ffff", "#1affff", "#33ffff", "#4dffff", "#80ffff", "#b3ffff", "#4d004d", "#602060", "#660066", "#993399", "#ac39ac", "#bf40bf", "#c653c6", "#cc66cc", "#d279d2", "#d98cd9", "#df9fdf", "#660029", "#800033", "#b30047", "#cc0052", "#e6005c", "#ff0066", "#ff1a75", "#ff3385", "#ff4d94", "#ff66a3", "#ff99c2" ];
-    for (let i = 0; i<swatches.length; i++){
-      let div = document.createElement("div")
-      div.setAttribute("class", "color-option")
-      div.setAttribute("style", `background-color: ${swatches[i]}`);
-      colorPalette.append(div)
-    }
+    const swatches = [
+      "#000000",
+      "#191919",
+      "#323232",
+      "#4b4b4b",
+      "#646464",
+      "#7d7d7d",
+      "#969696",
+      "#afafaf",
+      "#c8c8c8",
+      "#e1e1e1",
+      "#ffffff",
+      "#820000",
+      "#9b0000",
+      "#b40000",
+      "#cd0000",
+      "#e60000",
+      "#ff0000",
+      "#ff1919",
+      "#ff3232",
+      "#ff4b4b",
+      "#ff6464",
+      "#ff7d7d",
+      "#823400",
+      "#9b3e00",
+      "#b44800",
+      "#cd5200",
+      "#e65c00",
+      "#ff6600",
+      "#ff7519",
+      "#ff8532",
+      "#ff944b",
+      "#ffa364",
+      "#ffb27d",
+      "#828200",
+      "#9b9b00",
+      "#b4b400",
+      "#cdcd00",
+      "#e6e600",
+      "#ffff00",
+      "#ffff19",
+      "#ffff32",
+      "#ffff4b",
+      "#ffff64",
+      "#ffff7d",
+      "#003300",
+      "#004d00",
+      "#008000",
+      "#00b300",
+      "#00cc00",
+      "#00e600",
+      "#1aff1a",
+      "#4dff4d",
+      "#66ff66",
+      "#80ff80",
+      "#b3ffb3",
+      "#001a4d",
+      "#002b80",
+      "#003cb3",
+      "#004de6",
+      "#0000ff",
+      "#0055ff",
+      "#3377ff",
+      "#4d88ff",
+      "#6699ff",
+      "#80b3ff",
+      "#b3d1ff",
+      "#003333",
+      "#004d4d",
+      "#006666",
+      "#009999",
+      "#00cccc",
+      "#00ffff",
+      "#1affff",
+      "#33ffff",
+      "#4dffff",
+      "#80ffff",
+      "#b3ffff",
+      "#4d004d",
+      "#602060",
+      "#660066",
+      "#993399",
+      "#ac39ac",
+      "#bf40bf",
+      "#c653c6",
+      "#cc66cc",
+      "#d279d2",
+      "#d98cd9",
+      "#df9fdf",
+      "#660029",
+      "#800033",
+      "#b30047",
+      "#cc0052",
+      "#e6005c",
+      "#ff0066",
+      "#ff1a75",
+      "#ff3385",
+      "#ff4d94",
+      "#ff66a3",
+      "#ff99c2"
+    ];
+    swatches.forEach(color => {
+      let div = document.createElement("div");
+      div.setAttribute("class", "color-option");
+      div.setAttribute("style", `background-color: ${color}`);
+      colorPalette.append(div);
+    });
     const colorOption = document.querySelectorAll(".color-option");
     colorOption.forEach(o => o.addEventListener("click", chooseColor));
   };
@@ -80,6 +186,22 @@ const makeArt = () => {
 
   colorPalette.onmouseover = () => (colorPalette.mouseIsOver = true);
   colorPalette.onmouseout = () => (colorPalette.mouseIsOver = false);
+
+  const saveButton = document.createElement("button");
+  saveButton.setAttribute("class", "save-button");
+  saveButton.innerText = "Save Image";
+  pixelArtContainer.append(saveButton);
+
+  const saveImage = () => {
+    html2canvas(table, {
+      onrendered: canvas => {
+        imageShowcase.innerHTML = "";
+        imageShowcase.append(canvas);
+      }
+    });
+  };
+  
+  saveButton.addEventListener("click", saveImage);
 
   const hoverActiveColor = e => {
     e.target.style.boxShadow =
@@ -107,8 +229,9 @@ const makeArt = () => {
 
   // Table functions
   const table = document.createElement("table");
-  body.append(table);
-
+  table.setAttribute("id", "capture");
+  pixelArtContainer.append(table);
+  
   for (let i = 0; i < 16; i++) {
     let row = document.createElement("tr");
     row.setAttribute("class", `row-${i}`);
@@ -139,4 +262,4 @@ const makeArt = () => {
   cells.forEach(td => td.addEventListener("mouseleave", hoverInactiveColor));
 };
 
-button.addEventListener("click", makeArt);
+showButton.addEventListener("click", makeArt);

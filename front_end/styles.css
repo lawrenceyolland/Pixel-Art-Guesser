@@ -1,12 +1,13 @@
 body {
-  /* display: flex; */
-  /* width: 850px; */
+  display: flex;
 }
 
 table {
-  border-spacing:0; /* Removes cell spacing */
-  border-collapse: collapse;
+  border-spacing: 0; /* Removes cell spacing */
+  /* border-collapse: collapse; */
   border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 td {
@@ -16,12 +17,23 @@ td {
   float: left;
   padding: 0px;
   margin: 1px;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
 }
+
 td:hover {
   border: 1px solid grey;
-  /* box-shadow: ""; */
+}
+
+.save-button, .show-pixel-pad-button {
+  width: 100px;
+  margin: 5px 5px 5px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
+}
+
+.image-showcase {
+  margin: 70px 0px 0px 50px ;
 }
 
 /* Color Picker */
@@ -30,16 +42,16 @@ td:hover {
   border-radius: 3px;
   padding: 10px;
   font-size: 110%;
- }
+}
 
- .color-palette {
+.color-palette {
   height: 100px;
   width: 100px;
   background: red;
   display: none;
- }
+}
 
- .palette {
+.palette {
   margin-top: 5px;
   width: 270px;
   height: 220px;
@@ -50,18 +62,16 @@ td:hover {
   padding: 1px;
   position: absolute;
   z-index: 1000;
- }
- .color-option {
+}
+.color-option {
   width: 18px;
   height: 18px;
   margin: 3px;
-  cursor:pointer;
+  cursor: pointer;
   float: left;
   border-radius: 4px;
- }
+}
 
- #colorPicker {
-  border-right: 10px solid #f9009A;
- }
- 
- 
+#colorPicker {
+  border-right: 10px solid #f9009a;
+}
