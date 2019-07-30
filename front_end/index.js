@@ -68,9 +68,25 @@ function chooseColor(e) {
   colorPalette.style.display = "none";
 }
 
-const cell = document.querySelectorAll("td");
 const changeColor = e => {
-  e.target.style.backgroundColor = "blue";
   e.target.style.backgroundColor = colorInput.value;
 };
-cell.forEach(td => td.addEventListener("mouseover", changeColor));
+
+let trigger = false;
+const cells = document.querySelectorAll("td");
+cells.forEach(td => td.addEventListener("click", changeColor));
+
+cells.forEach(td => td.addEventListener("mousedown", () => (trigger = true)));
+cells.forEach(td => td.addEventListener("mouseup", () => (trigger = false)));
+
+table.addEventListener("mouseleave", () => (trigger = false));
+
+cells.forEach(td => {
+  td.addEventListener("mouseenter", e => {
+    e.preventDefault();
+    if (trigger === true) {
+      changeColor(e);
+      // e.target.style.backgroundColor = colorInput.value;
+    }
+  });
+});
