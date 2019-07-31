@@ -1,10 +1,10 @@
 // write js here
 const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
-body.append(spaContainer)
+body.append(spaContainer);
 
-const selectorContainer = document.createElement("div")
-selectorContainer.setAttribute("class", "selector-container")
+const selectorContainer = document.createElement("div");
+selectorContainer.setAttribute("class", "selector-container");
 
 const playerOneButton = document.createElement("button");
 playerOneButton.setAttribute("class", "player-choice-button drawer");
@@ -16,8 +16,7 @@ playerTwoButton.innerText = "Guess Something";
 
 selectorContainer.append(playerOneButton, playerTwoButton);
 
-spaContainer.append(selectorContainer)
-
+spaContainer.append(selectorContainer);
 
 const playerChoice = () => {
   return;
@@ -218,20 +217,28 @@ const makeArt = () => {
   saveButton.innerText = "Save Image";
   pixelArtContainer.append(saveButton);
 
+  const postImage = postData => {
+    const baseUrlArts = "http://localhost:3000//api/v1/arts";
+    fetch(baseUrlArts, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    });
+  };
   const saveImage = () => {
     html2canvas(table, {
       onrendered: canvas => {
-        imageShowcase.innerHTML = "";
-        imageShowcase.append(canvas);
-
-        const artTitle = inputTitle.value;
-        const artUrl = canvas.toDataURL();
-
+        // imageShowcase.innerHTML = "";
+        // imageShowcase.append(canvas);
         const postData = {
-          name: artTitle,
-          content: artUrl
+          art: {
+            title: inputTitle.value,
+            img_url: canvas.toDataURL()
+          }
         };
-        console.log(postData);
+        postImage(postData)
       }
     });
   };
@@ -353,4 +360,3 @@ playerOneButton.addEventListener("click", makeArt);
 //         })
 //     })
 // }
-
