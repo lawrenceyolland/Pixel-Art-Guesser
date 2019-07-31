@@ -295,50 +295,83 @@ const makeArt = () => {
     element.addEventListener(eventType, listener);
   };
 
-  // event types
-  const withMouseClick = withEvent("click");
   const withMouseDown = withEvent("mousedown");
   const withMouseUp = withEvent("mouseup");
   const withMouseOver = withEvent("mouseover");
-  const withMouseEnter = withEvent("mouseenter");
-  const withMouseLeave = withEvent("mouseleave");
 
-  // listeners
-  const withMouseClickAddRemoveColor = withMouseClick(addRemoveColor);
   const withMouseDownTriggerTrue = withMouseDown(triggerTrue);
   const withMouseUpTriggerFalse = withMouseUp(triggerFalse);
   const withMouseOverPaint = withMouseOver(paint);
-  const withMouseEnterActiveColor = withMouseEnter(hoverActiveColor);
-  const withMouseLeaveInactiveColor = withMouseLeave(hoverInactiveColor);
 
-  // reset when pointer leaves the table
+  // turn off draw when pointer leaves the table
   table.addEventListener("mouseleave", triggerFalse);
 
-  cells.forEach(td => {
-    // and and remove pixel background color
-    withMouseClickAddRemoveColor(td);
-    // mousedown and mouseover allow for draggable draw behaviour. Mouseup disables this.
-    withMouseDownTriggerTrue(td);
-    withMouseUpTriggerFalse(td);
-    withMouseOverPaint(td);
-    withMouseEnterActiveColor(td);
-    withMouseLeaveInactiveColor(td);
-  });
+  // and and remove pixel background color
+  cells.forEach(td => td.addEventListener("click", addRemoveColor));
+
+  // mousedown and mouseover allow for draggable draw behaviour. Mouseup disables this.
+  cells.forEach(withMouseDownTriggerTrue);
+  cells.forEach(withMouseUpTriggerFalse);
+  cells.forEach(withMouseOverPaint);
+
+  // set and reset box shadow hover effect
+  cells.forEach(td => td.addEventListener("mouseenter", hoverActiveColor));
+  cells.forEach(td => td.addEventListener("mouseleave", hoverInactiveColor));
 };
 
 playerOneButton.addEventListener("click", makeArt);
 
+// const baseUrlGames = "http://localhost:3000//api/v1/games"
+// const baseUrlUsers = "http://localhost:3000//api/v1/users"
+// const baseUrlArts = "http://localhost:3000//api/v1/arts"
 
-const youLost = () => {
-  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif"
-  body.style.backgroundImage = `url(${im})`
-  body.style.backgroundRepeat = "no-repeat"
-  body.style.backgroundSize = "cover" 
+// const fetchPost = () => {
+//     fetch(baseUrlGames, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             game: {
+//                 user_id: 2,
+//                 result: false,
+//                 score: 110
+//             }
+//         })
+//     })
+// }
 
-  spaContainer.removeChild(document.querySelector(".selector-container"))
-}
+// const fetchData = () => {
+//     return fetch(baseUrlGames)
+//     .then(resp => resp.json())
+//     .then(data => {debugger})
+// }
 
-playerTwoButton.addEventListener("click", youLost);
+// const fetchUserPost = () => {
+//     fetch(baseUrlUsers, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             user: {
+//                 name: "TestSubject01"
+//             }
+//         })
+//     })
+// }
 
-
-
+// const fetchArtPost = () => {
+//     fetch(baseUrlArts, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             art: {
+//                 title: "Art03",
+//                 img_url: "blank"
+//             }
+//         })
+//     })
+// }

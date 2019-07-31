@@ -67,10 +67,24 @@ td:hover {
   margin: 70px 0px 0px 50px;
 }
 
+pixelArtContainer {
+  position: absolute;
+  z-index: 15;
+  top: 30%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: white;
+}
+
+form {
+  width: 100%;
+}
+
 /* Color Picker */
 .inp {
   border: 1px solid #949494;
   border-radius: 3px;
+  margin: 0 3px 0 0;
   padding: 10px;
   font-size: 110%;
 }
@@ -94,6 +108,7 @@ td:hover {
   position: absolute;
   z-index: 1000;
 }
+
 .color-option {
   width: 18px;
   height: 18px;
