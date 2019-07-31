@@ -1,18 +1,20 @@
 class Api::V1::GamesController < ApplicationController
+  before_action :set_game, only: [:destroy, :show, :update]
+    def index
+      games = Game.all
+      render json: Api::V1::GameSerializer.new(games)
+    end
     def create
-        @api_v1_game_entry = Game.new(game_params)
-
-        if @api_v1_game_entry.save
-          render json: @api_v1_game_entry, status: :created, location: @api_v1_game
-        else
-          render json: @api_v1_game_entry.errors, status: :unprocessable_entity
-        end 
+        Game.create(game_params)
     end
 
     private
 
+    def set_game
+      @game = Game.find(params[:id])
+    end
     def game_params
-        params.require(:games).permit(:user_id, :result, :score)
+        params.require(:game).permit(:user_id, :result, :score)
     end
 
 end
