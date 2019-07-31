@@ -1,17 +1,36 @@
 // write js here
 const body = document.querySelector("body");
-const showButton = document.createElement("button");
-showButton.setAttribute("class", "show-pixel-pad-button");
-showButton.innerText = "show sketch pad";
-body.append(showButton);
+const spaContainer = document.createElement("spa");
+body.append(spaContainer)
+
+const selectorContainer = document.createElement("div")
+selectorContainer.setAttribute("class", "selector-container")
+
+const playerOneButton = document.createElement("button");
+playerOneButton.setAttribute("class", "player-choice-button drawer");
+playerOneButton.innerText = "Draw Something";
+
+const playerTwoButton = document.createElement("button");
+playerTwoButton.setAttribute("class", "player-choice-button guesser");
+playerTwoButton.innerText = "Guess Something";
+
+selectorContainer.append(playerOneButton, playerTwoButton);
+
+spaContainer.append(selectorContainer)
+
+
+const playerChoice = () => {
+  return;
+};
 
 const makeArt = () => {
-  body.removeChild(showButton);
+  spaContainer.removeChild(playerOneButton);
+  spaContainer.removeChild(playerTwoButton);
 
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
   imageShowcase.setAttribute("class", "image-showcase");
-  body.append(pixelArtContainer, imageShowcase);
+  spaContainer.append(pixelArtContainer, imageShowcase);
 
   // Form functions
   const form = document.createElement("form");
@@ -28,6 +47,14 @@ const makeArt = () => {
   palette.setAttribute("id", "colorPalette");
 
   form.append(input, palette);
+
+  const inputTitle = document.createElement("input");
+  inputTitle.setAttribute("type", "text");
+  inputTitle.setAttribute("class", "inp");
+  inputTitle.setAttribute("id", "art-title");
+  inputTitle.setAttribute("placeholder", "drawing title");
+
+  pixelArtContainer.append(inputTitle);
 
   const hideColorPalette = () => {
     if (colorPalette.mouseIsOver === false) {
@@ -197,10 +224,19 @@ const makeArt = () => {
       onrendered: canvas => {
         imageShowcase.innerHTML = "";
         imageShowcase.append(canvas);
+
+        const artTitle = inputTitle.value;
+        const artUrl = canvas.toDataURL();
+
+        const postData = {
+          name: artTitle,
+          content: artUrl
+        };
+        console.log(postData);
       }
     });
   };
-  
+
   saveButton.addEventListener("click", saveImage);
 
   const hoverActiveColor = e => {
@@ -231,7 +267,7 @@ const makeArt = () => {
   const table = document.createElement("table");
   table.setAttribute("id", "capture");
   pixelArtContainer.append(table);
-  
+
   for (let i = 0; i < 16; i++) {
     let row = document.createElement("tr");
     row.setAttribute("class", `row-${i}`);
@@ -262,4 +298,4 @@ const makeArt = () => {
   cells.forEach(td => td.addEventListener("mouseleave", hoverInactiveColor));
 };
 
-showButton.addEventListener("click", makeArt);
+playerOneButton.addEventListener("click", makeArt);
