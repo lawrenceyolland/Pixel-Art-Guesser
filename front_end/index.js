@@ -24,8 +24,7 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
-  spaContainer.removeChild(playerOneButton);
-  spaContainer.removeChild(playerTwoButton);
+  spaContainer.removeChild(selectorContainer);
 
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
@@ -300,58 +299,58 @@ const makeArt = () => {
 
 playerOneButton.addEventListener("click", makeArt);
 
-const baseUrlGames = "http://localhost:3000//api/v1/games"
-const baseUrlUsers = "http://localhost:3000//api/v1/users"
-const baseUrlArts = "http://localhost:3000//api/v1/arts"
+// const baseUrlGames = "http://localhost:3000//api/v1/games"
+// const baseUrlUsers = "http://localhost:3000//api/v1/users"
+// const baseUrlArts = "http://localhost:3000//api/v1/arts"
 
-const fetchPost = () => {
-    fetch(baseUrlGames, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            game: {
-                user_id: 2,
-                result: false,
-                score: 110
-            }
-        })
-    })
-}
+// const fetchPost = () => {
+//     fetch(baseUrlGames, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             game: {
+//                 user_id: 2,
+//                 result: false,
+//                 score: 110
+//             }
+//         })
+//     })
+// }
 
-const fetchData = () => {
-    return fetch(baseUrlGames)
-    .then(resp => resp.json())
-    .then(data => {debugger})
-}
+// const fetchData = () => {
+//     return fetch(baseUrlGames)
+//     .then(resp => resp.json())
+//     .then(data => {debugger})
+// }
 
-const fetchUserPost = () => {
-    fetch(baseUrlUsers, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            user: {
-                name: "TestSubject01"
-            }
-        })
-    })
-}
+// const fetchUserPost = () => {
+//     fetch(baseUrlUsers, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             user: {
+//                 name: "TestSubject01"
+//             }
+//         })
+//     })
+// }
 
-const fetchArtPost = () => {
-    fetch(baseUrlArts, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            art: {
-                title: "Art03",
-                img_url: "blank"
-            }
-        })
-    })
-}
+// const fetchArtPost = () => {
+//     fetch(baseUrlArts, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             art: {
+//                 title: "Art03",
+//                 img_url: "blank"
+//             }
+//         })
+//     })
+// }
 

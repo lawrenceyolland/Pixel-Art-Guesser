@@ -37,10 +37,19 @@ td:hover {
   left: 50%;
   margin: -100px 0 0 -150px;
   background: red;
+
+  text-align: center;
 }
 
 .player-choice-button {
+  /* display: inline-block; 
   background-color: white;
+  height: 20px; */
+  /* width: 400px; */
+	background: blue; 
+  display: inline-block;
+  margin:0 7.5px;
+  text-align: left;
 }
 
 .drawer {
