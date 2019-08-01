@@ -352,16 +352,16 @@ const makeArt = () => {
   });
 };
 
-const playerOneHeader = document.querySelector(".drawer");
-playerOneHeader.addEventListener("click", makeArt);
+// const playerOneHeader = document.querySelector(".drawer");
+// playerOneHeader.addEventListener("click", makeArt);
 
-const youWin = () => {
-  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-  body.style.backgroundImage = `url(${im})`;
-  body.style.backgroundRepeat = "no-repeat";
-  body.style.backgroundSize = "cover";
-  spaContainer.removeChild(document.querySelector(".selector-container"));
-};
+// const youWin = () => {
+//   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
+//   body.style.backgroundImage = `url(${im})`;
+//   body.style.backgroundRepeat = "no-repeat";
+//   body.style.backgroundSize = "cover";
+//   spaContainer.removeChild(document.querySelector(".selector-container"));
+// };
 
 const youLost = () => {
   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
@@ -371,3 +371,5 @@ const youLost = () => {
 
   spaContainer.removeChild(document.querySelector(".selector-container"));
 };
+// playerOneButton.addEventListener("click", makeArt);
+
