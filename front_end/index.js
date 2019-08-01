@@ -171,11 +171,11 @@ const guessSomething = () => {
       t = setTimeout(() => {
         if (height != 0) {
           height -= 5;
-          globalScore = height
+          globalScore = height;
           runReveal();
           console.log(height);
-        } else { 
-          fetchPostGame(height, user)
+        } else {
+          fetchPostGame(height, user);
         }
       }, 2000);
     };
@@ -440,12 +440,12 @@ const history = () => {
 
 const playerChoice = () => {
   // body.style.backgroundImage = "none";
-  body.style.backgroundImage = 'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")'
-  body.style.backgroundSize = 'cover';
+  body.style.backgroundImage =
+    'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")';
+  body.style.backgroundSize = "cover";
   body.style.backgroundPosition = "center center";
   body.style.backgroundRepeat = "no-repeat";
   body.style.backgroundAttachment = "fixed";
- 
 
   spaContainer.innerHTML = "";
 
@@ -586,13 +586,14 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
-  // const selectorContainer = document.querySelector(".selector-container");
-  // if (selectorContainer) spaContainer.removeChild(selectorContainer);
+
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
   imageShowcase.setAttribute("class", "image-showcase");
   spaContainer.append(pixelArtContainer, imageShowcase);
+
+  pixelArtContainer.style.background = "none";
 
   // Form functions
   const form = document.createElement("form");
@@ -602,7 +603,7 @@ const makeArt = () => {
   input.setAttribute("type", "text");
   input.setAttribute("class", "inp");
   input.setAttribute("id", "colorPicker");
-  input.setAttribute("placeholder", "Choose a color");
+  input.setAttribute("placeholder", "choose a color");
 
   const inputTitle = document.createElement("input");
   inputTitle.setAttribute("type", "text");
@@ -620,6 +621,8 @@ const makeArt = () => {
     if (colorPalette.mouseIsOver === false) {
       colorPalette.style.display = "none";
       colorInput.style.borderRight = `10px solid ${colorInput.value}`;
+      inputTitle.style.borderRight = `10px solid ${colorInput.value}`;
+      table.style.border = `5px solid ${colorInput.value}`;
     }
   };
 
@@ -760,9 +763,17 @@ const makeArt = () => {
     let color = rgbToHex(e.target.style.backgroundColor);
     colorInput.value = color;
     colorInput.style.borderRight = `10px solid ${color}`;
+    colorInput.style.color = `${colorInput.value}`;
+
+    inputTitle.style.borderRight = `10px solid ${colorInput.value}`;
+    inputTitle.style.color = `${colorInput.value}`;
+
+    table.style.border = `5px solid ${colorInput.value}`;
     colorPalette.style.display = "none";
   };
 
+
+  
   let colorInput = document.getElementById("colorPicker");
   let colorPalette = document.getElementById("colorPalette");
 
@@ -770,6 +781,10 @@ const makeArt = () => {
   colorInput.addEventListener("focusout", hideColorPalette);
   colorPalette.mouseIsOver = false;
   colorInput.style.borderRight = `10px solid ${colorInput.value}`;
+  colorInput.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
+
+  inputTitle.style.borderRight = `10px solid `;
+  inputTitle.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
 
   colorPalette.onmouseover = () => (colorPalette.mouseIsOver = true);
   colorPalette.onmouseout = () => (colorPalette.mouseIsOver = false);
@@ -777,7 +792,8 @@ const makeArt = () => {
   const saveRedrawButton = document.createElement("button");
   saveRedrawButton.setAttribute("class", "save-redraw-button");
   saveRedrawButton.innerText = "Save Image";
-
+  saveRedrawButton.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
+  
   pixelArtContainer.append(saveRedrawButton);
 
   const drawAnother = document.createElement("button");
@@ -841,10 +857,13 @@ const makeArt = () => {
   // Table functions
   const table = document.createElement("table");
   table.setAttribute("id", "capture");
+  table.style.border = `5px solid ${colorInput.value}`;
+
 
   const backToMenu = document.createElement("button");
   backToMenu.setAttribute("class", "back-to-menu");
   backToMenu.innerText = "Back to Menu";
+  backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
 
   backToMenu.addEventListener("click", playerChoice);
 
@@ -857,10 +876,13 @@ const makeArt = () => {
       let cell = document.createElement("td");
       cell.setAttribute("class", `panel-element-${j}`);
       cell.setAttribute("draggable", false);
+      cell.setAttribute("style", "background-color: white");
       row.append(cell);
     }
     table.append(row);
   }
+
+  table.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)"
 
   const cells = document.querySelectorAll("td");
 
