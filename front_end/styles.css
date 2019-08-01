@@ -30,37 +30,79 @@ td:hover {
 
 .selector-container {
   position: absolute;
-  width: 300px;
+  width: 400px;
   height: 200px;
   z-index: 15;
   top: 50%;
   left: 50%;
   margin: -100px 0 0 -150px;
-  background: red;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-.player-choice-button {
-  background-color: white;
+.player-choices {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  /* top: 40%; */
+  font-family: "Press Start 2P", cursive;
+}
+
+.player-choices[data-on="true"]:before {
+  content: "> ";
+}
+
+.player-choices[data-on="true"]:after {
+  content: " <";
+}
+
+.game-header {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  top: 10%;
+  font-family: "Press Start 2P", cursive;
 }
 
 .drawer {
   color: #5f009a;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 .guesser {
   color: #f9009a;
+  text-decoration: none;
 }
 
 .image-showcase {
   margin: 70px 0px 0px 50px;
 }
 
+pixelArtContainer {
+  position: absolute;
+  z-index: 15;
+  top: 30%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: white;
+}
+
+form {
+  width: 100%;
+}
+
 /* Color Picker */
 .inp {
   border: 1px solid #949494;
   border-radius: 3px;
+  margin: 0 3px 0 0;
   padding: 10px;
-  font-size: 110%;
+  font-family: "Press Start 2P", cursive;
+  font-size: 70%;
 }
 
 .color-palette {
@@ -82,6 +124,7 @@ td:hover {
   position: absolute;
   z-index: 1000;
 }
+
 .color-option {
   width: 18px;
   height: 18px;

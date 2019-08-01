@@ -3,54 +3,26 @@ const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
 
+const selectorContainer = document.createElement("div");
+selectorContainer.setAttribute("class", "selector-container");
+
+const playerOneButton = document.createElement("button");
+playerOneButton.setAttribute("class", "player-choice-button drawer");
+playerOneButton.innerText = "Draw Something";
+
+const playerTwoButton = document.createElement("button");
+playerTwoButton.setAttribute("class", "player-choice-button guesser");
+playerTwoButton.innerText = "Guess Something";
+
+selectorContainer.append(playerOneButton, playerTwoButton);
+
+spaContainer.append(selectorContainer);
+
 const playerChoice = () => {
-  const selectorContainer = document.createElement("div");
-  selectorContainer.setAttribute("class", "selector-container");
-
-  const gameHeader = document.createElement("h2");
-  gameHeader.setAttribute("class", "game-header");
-  gameHeader.innerText = "Play a New Game";
-
-  const playerOneHeader = document.createElement("h3");
-  playerOneHeader.setAttribute("class", "player-choices drawer");
-  playerOneHeader.innerText = "Draw Something";
-  playerOneHeader.dataset.on = true;
-
-  const playerTwoHeader = document.createElement("h3");
-  playerTwoHeader.setAttribute("class", "player-choices guesser");
-  playerTwoHeader.innerText = "Guess Something";
-  playerOneHeader.dataset.on = false;
-
-  selectorContainer.append(gameHeader, playerOneHeader, playerTwoHeader);
-
-  spaContainer.append(selectorContainer);
-
-  let direction = true;
-
-  const directionUp = () => (direction = true);
-  const directionDown = () => (direction = false);
-
-  const processMenuDirections = e => {
-    if (e.code === "Enter") {
-      direction === true ? makeArt() : youLost();
-    } else if (e.code === "ArrowUp") {
-      directionUp();
-      playerOneHeader.dataset.on = true;
-      playerTwoHeader.dataset.on = false;
-    } else if (e.code === "ArrowDown") {
-      directionDown();
-      playerOneHeader.dataset.on = false;
-      playerTwoHeader.dataset.on = true;
-    }
-  };
-
-  window.addEventListener("keydown", processMenuDirections);
+  return;
 };
 
-playerChoice();
-
 const makeArt = () => {
-  const selectorContainer = document.querySelector(".selector-container");
   spaContainer.removeChild(selectorContainer);
 
   const pixelArtContainer = document.createElement("pixelArtContainer");
@@ -79,6 +51,8 @@ const makeArt = () => {
   palette.setAttribute("id", "colorPalette");
 
   form.append(input, inputTitle, palette);
+
+  // form.append(inputTitle);
 
   const hideColorPalette = () => {
     if (colorPalette.mouseIsOver === false) {
@@ -321,55 +295,83 @@ const makeArt = () => {
     element.addEventListener(eventType, listener);
   };
 
-  // event types
-  const withMouseClick = withEvent("click");
   const withMouseDown = withEvent("mousedown");
   const withMouseUp = withEvent("mouseup");
   const withMouseOver = withEvent("mouseover");
-  const withMouseEnter = withEvent("mouseenter");
-  const withMouseLeave = withEvent("mouseleave");
 
-  // listeners
-  const withMouseClickAddRemoveColor = withMouseClick(addRemoveColor);
   const withMouseDownTriggerTrue = withMouseDown(triggerTrue);
   const withMouseUpTriggerFalse = withMouseUp(triggerFalse);
   const withMouseOverPaint = withMouseOver(paint);
-  const withMouseEnterActiveColor = withMouseEnter(hoverActiveColor);
-  const withMouseLeaveInactiveColor = withMouseLeave(hoverInactiveColor);
 
-  // reset when pointer leaves the table
+  // turn off draw when pointer leaves the table
   table.addEventListener("mouseleave", triggerFalse);
 
-  cells.forEach(td => {
-    // and and remove pixel background color
-    withMouseClickAddRemoveColor(td);
-    // mousedown and mouseover allow for draggable draw behaviour. Mouseup disables this.
-    withMouseDownTriggerTrue(td);
-    withMouseUpTriggerFalse(td);
-    withMouseOverPaint(td);
-    withMouseEnterActiveColor(td);
-    withMouseLeaveInactiveColor(td);
-  });
+  // and and remove pixel background color
+  cells.forEach(td => td.addEventListener("click", addRemoveColor));
+
+  // mousedown and mouseover allow for draggable draw behaviour. Mouseup disables this.
+  cells.forEach(withMouseDownTriggerTrue);
+  cells.forEach(withMouseUpTriggerFalse);
+  cells.forEach(withMouseOverPaint);
+
+  // set and reset box shadow hover effect
+  cells.forEach(td => td.addEventListener("mouseenter", hoverActiveColor));
+  cells.forEach(td => td.addEventListener("mouseleave", hoverInactiveColor));
 };
 
-// const playerOneHeader = document.querySelector(".drawer");
-// playerOneHeader.addEventListener("click", makeArt);
+playerOneButton.addEventListener("click", makeArt);
 
-// const youWin = () => {
-//   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-//   body.style.backgroundImage = `url(${im})`;
-//   body.style.backgroundRepeat = "no-repeat";
-//   body.style.backgroundSize = "cover";
-//   spaContainer.removeChild(document.querySelector(".selector-container"));
-// };
+// const baseUrlGames = "http://localhost:3000//api/v1/games"
+// const baseUrlUsers = "http://localhost:3000//api/v1/users"
+// const baseUrlArts = "http://localhost:3000//api/v1/arts"
 
-const youLost = () => {
-  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-  body.style.backgroundImage = `url(${im})`;
-  body.style.backgroundRepeat = "no-repeat";
-  body.style.backgroundSize = "cover";
+// const fetchPost = () => {
+//     fetch(baseUrlGames, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             game: {
+//                 user_id: 2,
+//                 result: false,
+//                 score: 110
+//             }
+//         })
+//     })
+// }
 
-  spaContainer.removeChild(document.querySelector(".selector-container"));
-};
-// playerOneButton.addEventListener("click", makeArt);
+// const fetchData = () => {
+//     return fetch(baseUrlGames)
+//     .then(resp => resp.json())
+//     .then(data => {debugger})
+// }
 
+// const fetchUserPost = () => {
+//     fetch(baseUrlUsers, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             user: {
+//                 name: "TestSubject01"
+//             }
+//         })
+//     })
+// }
+
+// const fetchArtPost = () => {
+//     fetch(baseUrlArts, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             art: {
+//                 title: "Art03",
+//                 img_url: "blank"
+//             }
+//         })
+//     })
+// }
