@@ -42,21 +42,29 @@ td:hover {
 }
 
 .player-choices {
-  display: inline-block; 
+  display: inline-block;
   text-align: center;
   margin-bottom: 20px;
   position: relative;
   /* top: 40%; */
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
+}
+
+.player-choices[data-on="true"]:before {
+  content: "> ";
+}
+
+.player-choices[data-on="true"]:after {
+  content: " <";
 }
 
 .game-header {
-  display: inline-block; 
+  display: inline-block;
   text-align: center;
   margin-bottom: 50px;
   position: relative;
   top: 10%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .drawer {
@@ -93,7 +101,7 @@ form {
   border-radius: 3px;
   margin: 0 3px 0 0;
   padding: 10px;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 70%;
 }
 

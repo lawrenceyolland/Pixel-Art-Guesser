@@ -35,13 +35,12 @@ const playerChoice = () => {
       direction === true ? makeArt() : youLost();
     } else if (e.code === "ArrowUp") {
       directionUp();
-      playerOneHeader.dataset.id = true;
-      playerTwoHeader.dataset.id = false;
+      playerOneHeader.dataset.on = true;
+      playerTwoHeader.dataset.on = false;
     } else if (e.code === "ArrowDown") {
       directionDown();
-      playerOneHeader.dataset.id = false;
-      playerTwoHeader.dataset.id = true;
-      console.log(playerTwoHeader.dataset.id);
+      playerOneHeader.dataset.on = false;
+      playerTwoHeader.dataset.on = true;
     }
   };
 
