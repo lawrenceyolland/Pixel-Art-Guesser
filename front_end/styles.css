@@ -21,7 +21,7 @@ td:hover {
   border: 1px solid grey;
 }
 
-.save-button {
+.save-redraw-button, .back-to-menu {
   width: 100px;
   margin: 5px 5px 5px 0;
   border: 1px solid #949494;
@@ -31,7 +31,7 @@ td:hover {
 .selector-container {
   position: absolute;
   width: 400px;
-  height: 200px;
+  height: 300px;
   z-index: 15;
   top: 50%;
   left: 50%;

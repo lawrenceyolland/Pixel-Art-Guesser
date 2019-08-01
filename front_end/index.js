@@ -87,6 +87,8 @@ const history = () => {
 };
 
 const playerChoice = () => {
+  spaContainer.innerHTML = ""
+
   const selectorContainer = document.createElement("div");
   selectorContainer.setAttribute("class", "selector-container");
 
@@ -122,9 +124,6 @@ const playerChoice = () => {
 
   let direction = true;
 
-  // const directionUp = () => (direction = true);
-  // const directionDown = () => (direction = false);
-
   let currentSelection = 1;
 
   const processMenuDirections = e => {
@@ -144,14 +143,11 @@ const playerChoice = () => {
       }
     } else if (e.code === "Digit1") {
       currentSelection = 1;
-      // directionUp();
       playerOneHeader.dataset.on = true;
       playerTwoHeader.dataset.on = false;
       artHistory.dataset.on = false;
     } else if (e.code === "Digit2") {
       currentSelection = 2;
-
-      // directionDown();
       playerTwoHeader.dataset.on = true;
       playerOneHeader.dataset.on = false;
       artHistory.dataset.on = false;
@@ -169,8 +165,9 @@ const playerChoice = () => {
 playerChoice();
 
 const makeArt = () => {
-  const selectorContainer = document.querySelector(".selector-container");
-  spaContainer.removeChild(selectorContainer);
+  // const selectorContainer = document.querySelector(".selector-container");
+  // if (selectorContainer) spaContainer.removeChild(selectorContainer);
+  spaContainer.innerHTML = ""
 
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
@@ -357,10 +354,14 @@ const makeArt = () => {
   colorPalette.onmouseover = () => (colorPalette.mouseIsOver = true);
   colorPalette.onmouseout = () => (colorPalette.mouseIsOver = false);
 
-  const saveButton = document.createElement("button");
-  saveButton.setAttribute("class", "save-button");
-  saveButton.innerText = "Save Image";
-  pixelArtContainer.append(saveButton);
+  const saveRedrawButton = document.createElement("button");
+  saveRedrawButton.setAttribute("class", "save-redraw-button");
+  saveRedrawButton.innerText = "Save Image";
+
+  pixelArtContainer.append(saveRedrawButton);
+
+  const drawAnother = document.createElement("button");
+  drawAnother.innerText = "Draw Another";
 
   const postImage = postData => {
     const baseUrlArts = "http://localhost:3000//api/v1/arts";
@@ -372,6 +373,7 @@ const makeArt = () => {
       body: JSON.stringify(postData)
     });
   };
+
   const saveImage = () => {
     html2canvas(table, {
       onrendered: canvas => {
@@ -384,9 +386,12 @@ const makeArt = () => {
         postImage(postData);
       }
     });
+    saveRedrawButton.removeEventListener("click", saveImage);
+    saveRedrawButton.innerText = "Draw Another"
+    saveRedrawButton.addEventListener("click", makeArt);
   };
 
-  saveButton.addEventListener("click", saveImage);
+  saveRedrawButton.addEventListener("click", saveImage);
 
   const hoverActiveColor = e => {
     e.target.style.boxShadow =
@@ -415,7 +420,15 @@ const makeArt = () => {
   // Table functions
   const table = document.createElement("table");
   table.setAttribute("id", "capture");
-  pixelArtContainer.append(table);
+
+  const backToMenu = document.createElement("button");
+  backToMenu.setAttribute("class", "back-to-menu");
+  backToMenu.innerText = "Back to Menu";
+
+  backToMenu.addEventListener("click", playerChoice)
+
+  pixelArtContainer.append(table, backToMenu);
+
 
   for (let i = 0; i < 16; i++) {
     let row = document.createElement("tr");
