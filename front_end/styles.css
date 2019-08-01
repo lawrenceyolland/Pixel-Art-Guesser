@@ -1,3 +1,19 @@
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.image-container .after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgb(0, 0, 0);
+}
+
 table {
   border-spacing: 0; /* Removes cell spacing */
   /* border-collapse: collapse; */
@@ -21,7 +37,9 @@ td:hover {
   border: 1px solid grey;
 }
 
-.save-button {
+.save-redraw-button,
+.back-to-menu,
+.history-button {
   width: 100px;
   margin: 5px 5px 5px 0;
   border: 1px solid #949494;
@@ -31,7 +49,7 @@ td:hover {
 .selector-container {
   position: absolute;
   width: 400px;
-  height: 200px;
+  height: 280px;
   z-index: 15;
   top: 50%;
   left: 50%;
@@ -42,7 +60,7 @@ td:hover {
 }
 
 .player-choices {
-  display: inline-block;
+  display: block;
   text-align: center;
   margin-bottom: 20px;
   position: relative;
@@ -50,6 +68,20 @@ td:hover {
   font-family: "Press Start 2P", cursive;
 }
 
+.player-choices[data-on="true"]:hover {
+  color: #f9009a;
+}
+.player-choices[data-on="true"]:hover:before {
+  content: "> ";
+}
+
+.player-choices[data-on="true"]:hover:after {
+  content: " <";
+}
+
+.player-choices[data-on="true"] {
+  color: #f9009a;
+}
 .player-choices[data-on="true"]:before {
   content: "> ";
 }
@@ -67,19 +99,8 @@ td:hover {
   font-family: "Press Start 2P", cursive;
 }
 
-.drawer {
-  color: #5f009a;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-.guesser {
-  color: #f9009a;
-  text-decoration: none;
-}
-
 .image-showcase {
-  margin: 70px 0px 0px 50px;
+  margin: 70px 0 0 50px;
 }
 
 pixelArtContainer {
@@ -136,4 +157,38 @@ form {
 
 #colorPicker {
   border-right: 10px solid #f9009a;
+}
+
+/* STYLING FOR HISTORY PAGE */
+
+.history_main_div {
+  /* container for the image divs */
+}
+
+.art_div {
+  text-align: center;
+  /* border: grey solid 1px; */
+  padding: 1rem;
+  width: 400px;
+  height: 400px;
+  display: inline-grid;
+  margin: 0 10px 10px 0;
+  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.pixel-drawing {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  font-family: "Press Start 2P", cursive;
+}
+
+.previous:before {
+  content: "< ";
+}
+
+.next:after {
+  content: " >";
 }

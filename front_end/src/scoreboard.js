@@ -1,7 +1,7 @@
 const baseUrlGames = "http://localhost:3000//api/v1/games"
 
 
-const selectedBody = document.querySelector("body")
+// const selectedBody = document.querySelector("body")
 
 // Call createLeaderBoards()
 
