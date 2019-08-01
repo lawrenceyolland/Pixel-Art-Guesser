@@ -3,26 +3,55 @@ const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
 
-const selectorContainer = document.createElement("div");
-selectorContainer.setAttribute("class", "selector-container");
-
-const playerOneButton = document.createElement("button");
-playerOneButton.setAttribute("class", "player-choice-button drawer");
-playerOneButton.innerText = "Draw Something";
-
-const playerTwoButton = document.createElement("button");
-playerTwoButton.setAttribute("class", "player-choice-button guesser");
-playerTwoButton.innerText = "Guess Something";
-
-selectorContainer.append(playerOneButton, playerTwoButton);
-
-spaContainer.append(selectorContainer);
-
 const playerChoice = () => {
-  return;
+  const selectorContainer = document.createElement("div");
+  selectorContainer.setAttribute("class", "selector-container");
+
+  const gameHeader = document.createElement("h2");
+  gameHeader.setAttribute("class", "game-header");
+  gameHeader.innerText = "Play a New Game";
+
+  const playerOneHeader = document.createElement("h3");
+  playerOneHeader.setAttribute("class", "player-choices drawer");
+  playerOneHeader.innerText = "Draw Something";
+  playerOneHeader.dataset.on = true;
+
+  const playerTwoHeader = document.createElement("h3");
+  playerTwoHeader.setAttribute("class", "player-choices guesser");
+  playerTwoHeader.innerText = "Guess Something";
+  playerOneHeader.dataset.on = false;
+
+  selectorContainer.append(gameHeader, playerOneHeader, playerTwoHeader);
+
+  spaContainer.append(selectorContainer);
+
+  let direction = true;
+
+  const directionUp = () => (direction = true);
+  const directionDown = () => (direction = false);
+
+  const processMenuDirections = e => {
+    if (e.code === "Enter") {
+      direction === true ? makeArt() : youLost();
+    } else if (e.code === "ArrowUp") {
+      directionUp();
+      playerOneHeader.dataset.id = true;
+      playerTwoHeader.dataset.id = false;
+    } else if (e.code === "ArrowDown") {
+      directionDown();
+      playerOneHeader.dataset.id = false;
+      playerTwoHeader.dataset.id = true;
+      console.log(playerTwoHeader.dataset.id);
+    }
+  };
+
+  window.addEventListener("keydown", processMenuDirections);
 };
 
+playerChoice();
+
 const makeArt = () => {
+  const selectorContainer = document.querySelector(".selector-container");
   spaContainer.removeChild(selectorContainer);
 
   const pixelArtContainer = document.createElement("pixelArtContainer");
@@ -51,8 +80,6 @@ const makeArt = () => {
   palette.setAttribute("id", "colorPalette");
 
   form.append(input, inputTitle, palette);
-
-  // form.append(inputTitle);
 
   const hideColorPalette = () => {
     if (colorPalette.mouseIsOver === false) {
@@ -326,19 +353,22 @@ const makeArt = () => {
   });
 };
 
-playerOneButton.addEventListener("click", makeArt);
+const playerOneHeader = document.querySelector(".drawer");
+playerOneHeader.addEventListener("click", makeArt);
 
+const youWin = () => {
+  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
+  body.style.backgroundImage = `url(${im})`;
+  body.style.backgroundRepeat = "no-repeat";
+  body.style.backgroundSize = "cover";
+  spaContainer.removeChild(document.querySelector(".selector-container"));
+};
 
 const youLost = () => {
-  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif"
-  body.style.backgroundImage = `url(${im})`
-  body.style.backgroundRepeat = "no-repeat"
-  body.style.backgroundSize = "cover" 
+  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
+  body.style.backgroundImage = `url(${im})`;
+  body.style.backgroundRepeat = "no-repeat";
+  body.style.backgroundSize = "cover";
 
-  spaContainer.removeChild(document.querySelector(".selector-container"))
-}
-
-playerTwoButton.addEventListener("click", youLost);
-
-
-
+  spaContainer.removeChild(document.querySelector(".selector-container"));
+};

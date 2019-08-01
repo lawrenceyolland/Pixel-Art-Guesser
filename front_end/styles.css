@@ -30,37 +30,44 @@ td:hover {
 
 .selector-container {
   position: absolute;
-  width: 300px;
+  width: 400px;
   height: 200px;
   z-index: 15;
   top: 50%;
   left: 50%;
   margin: -100px 0 0 -150px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.player-choice-button {
+.player-choices {
   display: inline-block; 
-  background-color: white;
-  height: 30px; 
-  /* width: 400px; */
-	background: white; 
-  /* display: flex; */
-  margin:0 10px;
-  padding: 5px;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 20px;
   position: relative;
-  top: 45%;
+  /* top: 40%; */
+  font-family: 'Press Start 2P', cursive;
+}
+
+.game-header {
+  display: inline-block; 
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  top: 10%;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .drawer {
   color: #5f009a;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 .guesser {
   color: #f9009a;
+  text-decoration: none;
 }
 
 .image-showcase {
@@ -86,7 +93,8 @@ form {
   border-radius: 3px;
   margin: 0 3px 0 0;
   padding: 10px;
-  font-size: 110%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 70%;
 }
 
 .color-palette {
