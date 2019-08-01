@@ -108,7 +108,6 @@ const guessSomething = () => {
       .then(assignArtToGuess);
   };
 
-  //--- goes to guess_game
   let globalScore = 0;
 
   fetchAllArts = () => {
