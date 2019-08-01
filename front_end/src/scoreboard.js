@@ -1,5 +1,5 @@
 const baseUrlGames = "http://localhost:3000//api/v1/games"
-const baseUrlUsers = "http://localhost:3000//api/v1/users"
+
 
 const selectedBody = document.querySelector("body")
 
