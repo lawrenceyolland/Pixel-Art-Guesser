@@ -108,7 +108,7 @@ const guessSomething = () => {
       .then(assignArtToGuess);
   };
 
-  let globalScore = 0;
+  let globalScore = 100;
 
   fetchAllArts = () => {
     return fetch(baseUrlArts).then(resp => resp.json());
@@ -122,33 +122,65 @@ const guessSomething = () => {
   const appendRandomArt = (arts, user) => {
     const random_number = Math.floor(Math.random(arts.data.length) * 10);
     const picked_art = arts.data[random_number];
+
     const artDiv = document.createElement("div");
+    artDiv.setAttribute("class", "image-container");
     artDiv.id = "div-art-guess";
     artDiv.dataset.user_id = user.id;
     artDiv.dataset.img_id = picked_art.id;
+
     const artImg = document.createElement("img");
     artImg.src = picked_art.attributes.img_url;
 
+    const overlayDiv = document.createElement("div");
+    overlayDiv.setAttribute("class", "after");
+
     const guessForm = document.createElement("form");
     guessForm.id = "guess-form";
+
     const guessFormLabel = document.createElement("label");
+
     const guessFormInput = document.createElement("input");
     guessFormInput.id = "guess_input";
     guessFormLabel.for = "guess_input";
     guessFormInput.type = "text";
+
     const guessFormButton = document.createElement("button");
     guessFormButton.innerText = "Guess!";
     guessFormButton.className = "guess-button";
     const title = picked_art.attributes.title;
+
     guessForm.addEventListener("submit", event =>
       checkAnswer(event, title, user)
     );
 
     guessForm.append(guessFormLabel, guessFormInput, guessFormButton);
 
-    artDiv.append(artImg, guessForm);
+    artDiv.append(overlayDiv, artImg, guessForm);
 
     spaContainer.append(artDiv);
+    artImg.style.display = "none";
+
+    const overlay = document.querySelector(".after");
+    let height = 100;
+
+    const runReveal = () => {
+      overlay.style.height = `${height}%`;
+      overlay.style.background = `rgba(0,0,0,0.${height})`;
+      artImg.style.display = "";
+      t = setTimeout(() => {
+        if (height != 0) {
+          height -= 5;
+          globalScore = height
+          runReveal();
+          console.log(height);
+        } else { 
+          fetchPostGame(height, user)
+        }
+      }, 2000);
+    };
+
+    runReveal();
   };
 
   const checkAnswer = (event, title, user) => {
@@ -156,8 +188,8 @@ const guessSomething = () => {
     const answer = event.target.guess_input.value;
     const title_downcase = title.toLowerCase().trim();
     const answer_downcase = answer.toLowerCase().trim();
+
     if (title_downcase.valueOf() === answer_downcase.valueOf()) {
-      globalScore += 100;
       assignArtToGuess(user);
     } else {
       fetchPostGame(globalScore, user).then(endGame);
@@ -318,37 +350,6 @@ const showScoreboard = () => {
   createLeaderBoards();
 };
 
-// const guessImage = () => {
-//   spaContainer.innerHTML = "";
-//   spaContainer.innerHTML = `
-//   <div class="image-container">
-//   <img src="http://lorempixel.com/200/300" />
-//   <div class="after"></div>
-// </div>
-// `;
-
-//   const overlay = document.querySelector(".after");
-//   let height = 100;
-
-//   const runReveal = () => {
-//     overlay.style.height = `${height}%`;
-//     t = setTimeout(() => {
-//       if (height != 0) {
-//         height -= 5;
-//         runReveal();
-//         console.log(height);
-//       }
-//     }, 2000);
-//   };
-
-//   const button = document.createElement("button");
-//   button.innerText = "reveal";
-
-//   button.addEventListener("click", runReveal);
-
-//   spaContainer.append(button);
-// };
-
 const history = () => {
   const per_page = n => `/?per_page=9&page=${n}`;
   const headTitle = document.querySelector("#head-title");
@@ -438,7 +439,13 @@ const history = () => {
 };
 
 const playerChoice = () => {
-  body.style.backgroundImage = "none";
+  // body.style.backgroundImage = "none";
+  body.style.backgroundImage = 'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")'
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundPosition = "center center";
+  body.style.backgroundRepeat = "no-repeat";
+  body.style.backgroundAttachment = "fixed";
+ 
 
   spaContainer.innerHTML = "";
 
@@ -799,6 +806,7 @@ const makeArt = () => {
         postImage(postData);
       }
     });
+
     saveRedrawButton.removeEventListener("click", saveImage);
     saveRedrawButton.innerText = "Draw Another";
     saveRedrawButton.addEventListener("click", makeArt);
@@ -883,14 +891,5 @@ const makeArt = () => {
     withMouseLeaveInactiveColor(td);
   });
 };
-
-// const youLost = () => {
-//   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-//   body.style.backgroundImage = `url(${im})`;
-//   body.style.backgroundRepeat = "no-repeat";
-//   body.style.backgroundSize = "cover";
-
-//   spaContainer.removeChild(document.querySelector(".selector-container"));
-// };
 
 playerChoice();
