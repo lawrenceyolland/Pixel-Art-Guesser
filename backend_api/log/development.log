@@ -1480,3 +1480,1886 @@ Processing by Api::V1::ArtsController#index as HTML
 Completed 200 OK in 17ms (Views: 4.4ms | ActiveRecord: 10.8ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jowita"], ["created_at", "2019-07-31 13:04:13.428258"], ["updated_at", "2019-07-31 13:04:13.428258"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 8], ["created_at", "2019-07-31 13:05:08.058846"], ["updated_at", "2019-07-31 13:05:08.058846"], ["score", 322]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT "arts".* FROM "arts"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.8ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lawrence"], ["created_at", "2019-07-31 13:06:30.760052"], ["updated_at", "2019-07-31 13:06:30.760052"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aruna"], ["created_at", "2019-07-31 13:06:30.761557"], ["updated_at", "2019-07-31 13:06:30.761557"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Federica"], ["created_at", "2019-07-31 13:06:30.762652"], ["updated_at", "2019-07-31 13:06:30.762652"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Amy"], ["created_at", "2019-07-31 13:06:30.763673"], ["updated_at", "2019-07-31 13:06:30.763673"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Louise"], ["created_at", "2019-07-31 13:06:30.764724"], ["updated_at", "2019-07-31 13:06:30.764724"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jowita"], ["created_at", "2019-07-31 13:06:30.776764"], ["updated_at", "2019-07-31 13:06:30.776764"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT "arts".* FROM "arts"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lawrence"], ["created_at", "2019-07-31 13:06:47.825273"], ["updated_at", "2019-07-31 13:06:47.825273"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aruna"], ["created_at", "2019-07-31 13:06:47.826963"], ["updated_at", "2019-07-31 13:06:47.826963"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Federica"], ["created_at", "2019-07-31 13:06:47.828332"], ["updated_at", "2019-07-31 13:06:47.828332"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Amy"], ["created_at", "2019-07-31 13:06:47.829647"], ["updated_at", "2019-07-31 13:06:47.829647"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Louise"], ["created_at", "2019-07-31 13:06:47.830801"], ["updated_at", "2019-07-31 13:06:47.830801"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jowita"], ["created_at", "2019-07-31 13:06:47.831867"], ["updated_at", "2019-07-31 13:06:47.831867"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 15], ["created_at", "2019-07-31 13:06:47.844354"], ["updated_at", "2019-07-31 13:06:47.844354"], ["score", 324]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 16], ["created_at", "2019-07-31 13:06:47.846256"], ["updated_at", "2019-07-31 13:06:47.846256"], ["score", 262]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 17], ["created_at", "2019-07-31 13:06:47.847793"], ["updated_at", "2019-07-31 13:06:47.847793"], ["score", 7]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["created_at", "2019-07-31 13:06:47.849553"], ["updated_at", "2019-07-31 13:06:47.849553"], ["score", 31]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 19], ["created_at", "2019-07-31 13:06:47.851047"], ["updated_at", "2019-07-31 13:06:47.851047"], ["score", 376]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 20], ["created_at", "2019-07-31 13:06:47.852940"], ["updated_at", "2019-07-31 13:06:47.852940"], ["score", 152]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 15], ["created_at", "2019-07-31 13:06:47.854893"], ["updated_at", "2019-07-31 13:06:47.854893"], ["score", 63]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT "arts".* FROM "arts"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lawrence"], ["created_at", "2019-07-31 18:01:21.641533"], ["updated_at", "2019-07-31 18:01:21.641533"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aruna"], ["created_at", "2019-07-31 18:01:21.643202"], ["updated_at", "2019-07-31 18:01:21.643202"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Federica"], ["created_at", "2019-07-31 18:01:21.644497"], ["updated_at", "2019-07-31 18:01:21.644497"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Amy"], ["created_at", "2019-07-31 18:01:21.645856"], ["updated_at", "2019-07-31 18:01:21.645856"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Louise"], ["created_at", "2019-07-31 18:01:21.647217"], ["updated_at", "2019-07-31 18:01:21.647217"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jowita"], ["created_at", "2019-07-31 18:01:21.648498"], ["updated_at", "2019-07-31 18:01:21.648498"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 21], ["created_at", "2019-07-31 18:01:21.656114"], ["updated_at", "2019-07-31 18:01:21.656114"], ["score", 350]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 22], ["created_at", "2019-07-31 18:01:21.658276"], ["updated_at", "2019-07-31 18:01:21.658276"], ["score", 253]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 23], ["created_at", "2019-07-31 18:01:21.660892"], ["updated_at", "2019-07-31 18:01:21.660892"], ["score", 42]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 24], ["created_at", "2019-07-31 18:01:21.662838"], ["updated_at", "2019-07-31 18:01:21.662838"], ["score", 388]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 25], ["created_at", "2019-07-31 18:01:21.664863"], ["updated_at", "2019-07-31 18:01:21.664863"], ["score", 418]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 26], ["created_at", "2019-07-31 18:01:21.666639"], ["updated_at", "2019-07-31 18:01:21.666639"], ["score", 292]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 21], ["created_at", "2019-07-31 18:01:21.668135"], ["updated_at", "2019-07-31 18:01:21.668135"], ["score", 132]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (2.1ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.673864"], ["updated_at", "2019-07-31 18:01:21.673864"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.677200"], ["updated_at", "2019-07-31 18:01:21.677200"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.679086"], ["updated_at", "2019-07-31 18:01:21.679086"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.688881"], ["updated_at", "2019-07-31 18:01:21.688881"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.690437"], ["updated_at", "2019-07-31 18:01:21.690437"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.691801"], ["updated_at", "2019-07-31 18:01:21.691801"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.693077"], ["updated_at", "2019-07-31 18:01:21.693077"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.694292"], ["updated_at", "2019-07-31 18:01:21.694292"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.695641"], ["updated_at", "2019-07-31 18:01:21.695641"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.696901"], ["updated_at", "2019-07-31 18:01:21.696901"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.698007"], ["updated_at", "2019-07-31 18:01:21.698007"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.699067"], ["updated_at", "2019-07-31 18:01:21.699067"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.1ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:01:21.700066"], ["updated_at", "2019-07-31 18:01:21.700066"], ["title", "Faker::Hipster"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.4ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.3ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Destroy (0.2ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 24]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 25]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 26]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT "arts".* FROM "arts"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.3ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.3ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.1ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.1ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.1ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.1ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.1ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mArt Destroy (0.2ms)[0m  [1m[31mDELETE FROM "arts" WHERE "arts"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lawrence"], ["created_at", "2019-07-31 18:02:39.714684"], ["updated_at", "2019-07-31 18:02:39.714684"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aruna"], ["created_at", "2019-07-31 18:02:39.716023"], ["updated_at", "2019-07-31 18:02:39.716023"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Federica"], ["created_at", "2019-07-31 18:02:39.717052"], ["updated_at", "2019-07-31 18:02:39.717052"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Amy"], ["created_at", "2019-07-31 18:02:39.718102"], ["updated_at", "2019-07-31 18:02:39.718102"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Louise"], ["created_at", "2019-07-31 18:02:39.719238"], ["updated_at", "2019-07-31 18:02:39.719238"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jowita"], ["created_at", "2019-07-31 18:02:39.720281"], ["updated_at", "2019-07-31 18:02:39.720281"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 27], ["created_at", "2019-07-31 18:02:39.726489"], ["updated_at", "2019-07-31 18:02:39.726489"], ["score", 495]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 28], ["created_at", "2019-07-31 18:02:39.729468"], ["updated_at", "2019-07-31 18:02:39.729468"], ["score", 431]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 29], ["created_at", "2019-07-31 18:02:39.731302"], ["updated_at", "2019-07-31 18:02:39.731302"], ["score", 49]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 30], ["created_at", "2019-07-31 18:02:39.741063"], ["updated_at", "2019-07-31 18:02:39.741063"], ["score", 115]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 31], ["created_at", "2019-07-31 18:02:39.742927"], ["updated_at", "2019-07-31 18:02:39.742927"], ["score", 480]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 32], ["created_at", "2019-07-31 18:02:39.744851"], ["updated_at", "2019-07-31 18:02:39.744851"], ["score", 207]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 27], ["created_at", "2019-07-31 18:02:39.746664"], ["updated_at", "2019-07-31 18:02:39.746664"], ["score", 401]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.3ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.041430"], ["updated_at", "2019-07-31 18:02:40.041430"], ["title", "typewriter"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.042952"], ["updated_at", "2019-07-31 18:02:40.042952"], ["title", "retro"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.044226"], ["updated_at", "2019-07-31 18:02:40.044226"], ["title", "PBR&B"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.045347"], ["updated_at", "2019-07-31 18:02:40.045347"], ["title", "keytar"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.046413"], ["updated_at", "2019-07-31 18:02:40.046413"], ["title", "ramps"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.053752"], ["updated_at", "2019-07-31 18:02:40.053752"], ["title", "austin"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.054980"], ["updated_at", "2019-07-31 18:02:40.054980"], ["title", "phlogiston"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.056285"], ["updated_at", "2019-07-31 18:02:40.056285"], ["title", "locavore"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.057540"], ["updated_at", "2019-07-31 18:02:40.057540"], ["title", "disrupt"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.058633"], ["updated_at", "2019-07-31 18:02:40.058633"], ["title", "biodiesel"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.059712"], ["updated_at", "2019-07-31 18:02:40.059712"], ["title", "meggings"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.060833"], ["updated_at", "2019-07-31 18:02:40.060833"], ["title", "heirloom"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mArt Create (0.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-07-31 18:02:40.062059"], ["updated_at", "2019-07-31 18:02:40.062059"], ["title", "cred"], ["img_url", "http://lorempixel.com/386/386/"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+Started GET "/api/v1/arts?limit=25&offset=50" for ::1 at 2019-07-31 19:50:56 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lhngo/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"limit"=>"25", "offset"=>"50"}
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 29ms (Views: 13.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:51:01 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:51:12 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/arts?per_page=5&page=2" for ::1 at 2019-07-31 19:51:17 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:51:25 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:51:53 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `page' for #<Api::V1::ArtSerializer:0x00007fb43a68df30>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:52:24 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `page' for #<Api::V1::ArtSerializer:0x00007fb43bb298e0>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:52:27 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `page' for #<Api::V1::ArtSerializer:0x00007fb43a7e59c8>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:52:28 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `page' for #<Api::V1::ArtSerializer:0x00007fb440236eb8>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:52:29 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `page' for #<Api::V1::ArtSerializer:0x00007fb43a677d20>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:52:52 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `first' for #<Api::V1::ArtSerializer:0x00007fb43baa5658>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:52:54 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `first' for #<Api::V1::ArtSerializer:0x00007fb43a309440>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:53:01 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT "arts".* FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 11ms (Views: 4.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:53:13 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE Art Load (0.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/lhngo/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `first' for #<Api::V1::ArtSerializer:0x00007fb43cacf4e8>):
+  
+app/controllers/api/v1/arts_controller.rb:4:in `index'
+Started GET "/api/v1/arts" for ::1 at 2019-07-31 19:58:56 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:3
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 14ms (Views: 4.0ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/arts?per_page=5&page=1" for ::1 at 2019-07-31 19:59:13 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"per_page"=>"5", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:3
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/arts?page=1" for ::1 at 2019-07-31 20:00:17 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 13ms (Views: 4.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/v1/arts?page=2" for ::1 at 2019-07-31 20:00:23 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 25]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/arts?page=1" for ::1 at 2019-07-31 20:00:28 +0100
+Processing by Api::V1::ArtsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:02:36 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-07-31 20:02:47 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:31:17 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:42:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:43:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:44:05 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:48:24 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 20:48:54 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 21:28:47 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 21:29:25 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 21:29:59 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 21:30:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 21:35:53 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 22:59:52 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:12:04 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:12:27 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:13:01 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:15:26 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:15:56 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-07-31 23:16:09 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:46:53 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (4.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 24ms (Views: 4.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:47:48 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:48:34 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:51:33 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=11" for ::1 at 2019-08-01 08:51:36 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"11"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 90]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:52:26 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=11" for ::1 at 2019-08-01 08:52:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"11"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 90]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:53:01 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 08:53:03 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=3" for ::1 at 2019-08-01 08:53:06 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"3"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 18]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:56:13 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:56:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:57:25 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 08:59:01 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:00:39 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:04:57 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:05:02 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=3" for ::1 at 2019-08-01 09:05:03 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"3"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 18]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=4" for ::1 at 2019-08-01 09:05:04 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 27]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:05:33 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:05:59 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:08:02 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:08:04 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:09:38 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=0" for ::1 at 2019-08-01 09:09:41 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"0"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-1" for ::1 at 2019-08-01 09:09:45 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-2" for ::1 at 2019-08-01 09:09:46 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:10:05 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:13:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:13:29 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:13:44 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:14:21 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:14:24 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:19:06 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=0" for ::1 at 2019-08-01 09:19:10 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"0"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-1" for ::1 at 2019-08-01 09:19:11 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-2" for ::1 at 2019-08-01 09:19:12 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-3" for ::1 at 2019-08-01 09:19:13 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-3"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-4" for ::1 at 2019-08-01 09:19:14 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-5" for ::1 at 2019-08-01 09:19:17 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-5"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-4" for ::1 at 2019-08-01 09:19:18 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-3" for ::1 at 2019-08-01 09:19:19 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-3"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-2" for ::1 at 2019-08-01 09:19:22 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-1" for ::1 at 2019-08-01 09:19:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=0" for ::1 at 2019-08-01 09:19:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"0"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:19:24 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:19:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:19:44 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=0" for ::1 at 2019-08-01 09:19:50 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"0"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-1" for ::1 at 2019-08-01 09:19:58 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=-2" for ::1 at 2019-08-01 09:20:01 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"-2"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:20:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:20:27 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:23:39 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-01 09:23:41 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-01 09:23:51 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:4
+  [1m[36mArt Load (0.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/arts_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+

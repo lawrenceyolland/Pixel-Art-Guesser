@@ -1,6 +1,7 @@
 class Api::V1::ArtsController < ApplicationController
+    # ?per_page=5&page=1
     def index
-        arts = Art.all
+        arts = paginate Art.all
         render json: Api::V1::ArtSerializer.new(arts)
     end
     def create
