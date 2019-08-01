@@ -1,7 +1,100 @@
-// write js here
 const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
+
+const withEvent = eventType => listener => element => {
+  element.addEventListener(eventType, listener);
+};
+
+// event types
+const withMouseClick = withEvent("click");
+const withMouseDown = withEvent("mousedown");
+const withMouseUp = withEvent("mouseup");
+const withMouseOver = withEvent("mouseover");
+const withMouseEnter = withEvent("mouseenter");
+const withMouseLeave = withEvent("mouseleave");
+
+const showScoreboard = () => {
+  console.log("the event listener worked");
+  const baseUrlGames = "http://localhost:3000//api/v1/games";
+  const baseUrlUsers = "http://localhost:3000//api/v1/users";
+
+  const fetchScoreBoards = () => {
+    return fetch(baseUrlGames).then(resp => resp.json());
+  };
+
+  const sortDataRanking = () => {
+    return fetchScoreBoards().then(games => {
+      const sorted_games = games.data.sort(function(a, b) {
+        return a.attributes.score - b.attributes.score;
+      });
+      const users = games.included;
+      return [sorted_games.reverse().slice(0, 11), users];
+    });
+  };
+
+  const createLeaderBoards = () => {
+    sortDataRanking().then(appendBodyWithLeaderBoards);
+  };
+
+  const appendBodyWithLeaderBoards = ranking => {
+    const games = ranking[0];
+    const players = ranking[1];
+    spaContainer.innerHTML = "";
+    const boardDiv = document.createElement("div");
+    boardDiv.className = "leaderboard";
+
+    const boardUl = document.createElement("ul");
+    boardUl.className = "boardul";
+    games.forEach(game => {
+      players;
+      const player_id = game.relationships.user.data.id;
+      const player_name = players.find(user => user.id === player_id).attributes
+        .name;
+      const boardLi = document.createElement("li");
+      boardLi.dataset.game_id = game.id;
+      boardLi.innerText = `Player: ${player_name}, Score ${
+        game.attributes.score
+      }!`;
+
+      boardUl.appendChild(boardLi);
+    });
+
+    boardDiv.appendChild(boardUl);
+    selectedBody.appendChild(boardDiv);
+  };
+};
+
+const guessImage = () => {
+  spaContainer.innerHTML = "";
+  spaContainer.innerHTML = `
+  <div class="image-container">
+  <img src="http://lorempixel.com/200/300" />
+  <div class="after"></div>
+</div>
+`;
+
+  const overlay = document.querySelector(".after");
+  let height = 100;
+
+  const runReveal = () => {
+    overlay.style.height = `${height}%`;
+    t = setTimeout(() => {
+      if (height != 0) {
+        height -= 5;
+        runReveal();
+        console.log(height);
+      }
+    }, 2000);
+  };
+
+  const button = document.createElement("button");
+  button.innerText = "reveal";
+
+  button.addEventListener("click", runReveal);
+
+  spaContainer.append(button);
+};
 
 const history = () => {
   const baseUrlArts = "http://localhost:3000//api/v1/arts";
@@ -9,8 +102,6 @@ const history = () => {
   const headTitle = document.querySelector("#head-title");
   headTitle.dataset.history_page = 1;
   let historyPage = parseInt(headTitle.dataset.history_page);
-
-  // --- Call showHistoryGames
 
   const fetchArtData = (n = 1) => {
     return fetch(baseUrlArts + per_page(n)).then(resp => resp.json());
@@ -22,21 +113,21 @@ const history = () => {
     });
   };
 
-  const nextHistoryPage = event => {
+  const nextHistoryPage = () => {
     const art_number = document.querySelector(".history_main_div").dataset
       .art_number;
     if (!(art_number < 9)) {
       historyPage += 1;
       showHistoryGames(historyPage);
     } else {
-      alert("No more Arts");
+      alert("No More Art. Sorry :(");
     }
   };
-  const previousHistoryPage = event => {
+
+  const previousHistoryPage = () => {
     const art_number = document.querySelector(".history_main_div").dataset
       .art_number;
     if (historyPage > 1) {
-      debugger;
       historyPage -= 1;
       showHistoryGames(historyPage);
     } else {
@@ -45,36 +136,44 @@ const history = () => {
   };
 
   const appendHistoryPage = arts => {
-    selectedBody.innerHTML = "";
+    spaContainer.innerHTML = "";
+
     const historyDiv = document.createElement("div");
-    historyDiv.className = "history_main_div";
+    historyDiv.setAttribute("class", "history_main_div");
     historyDiv.dataset.art_number = arts.data.length;
+
     const previousButton = document.createElement("button");
+    previousButton.setAttribute("class", "history-button previous");
     previousButton.innerText = "Previous";
-    previousButton.className = "history-button";
+    // previous button should be disable by default
+    // previousButton.setAttribute("disabled", true)
+
     previousButton.addEventListener("click", event =>
       previousHistoryPage(event)
     );
 
     const nextButton = document.createElement("button");
-    nextButton.addEventListener("click", event => nextHistoryPage(event));
+    nextButton.setAttribute("class", "history-button next");
     nextButton.innerText = "Next";
-    nextButton.className = "history-button";
+
+    nextButton.addEventListener("click", event => nextHistoryPage(event));
 
     const pageArts = document.createElement("p");
-    pageArts.innerText = `This Page Arts: ${arts.data.length}`;
+    pageArts.innerText = `This Page Art #: ${arts.data.length}`;
 
     historyDiv.append(previousButton, nextButton, pageArts);
 
-    selectedBody.appendChild(historyDiv);
+    spaContainer.appendChild(historyDiv);
 
     arts.data.forEach(art => {
       const eachArtDivElem = document.createElement("div");
-      eachArtDivElem.className = "art_div";
+      eachArtDivElem.setAttribute("class", "art_div");
       eachArtDivElem.dataset.id = art.id;
+
       const eachArtImg = document.createElement("img");
-      eachArtImg.src = art.attributes.img_url;
-      eachArtImg.className = "img";
+      eachArtImg.setAttribute("src", art.attributes.img_url);
+      eachArtImg.setAttribute("class", "img pixel-drawing");
+
       const eachPArtElem = document.createElement("p");
       eachPArtElem.innerText = art.attributes.title;
       eachArtDivElem.append(eachArtImg, eachPArtElem);
@@ -87,7 +186,7 @@ const history = () => {
 };
 
 const playerChoice = () => {
-  spaContainer.innerHTML = ""
+  spaContainer.innerHTML = "";
 
   const selectorContainer = document.createElement("div");
   selectorContainer.setAttribute("class", "selector-container");
@@ -99,7 +198,7 @@ const playerChoice = () => {
   const playerOneHeader = document.createElement("h3");
   playerOneHeader.setAttribute("class", "player-choices drawer");
   playerOneHeader.innerText = "Draw Something";
-  playerOneHeader.dataset.on = true;
+  playerOneHeader.dataset.on = false;
 
   const playerTwoHeader = document.createElement("h3");
   playerTwoHeader.setAttribute("class", "player-choices guesser");
@@ -109,36 +208,39 @@ const playerChoice = () => {
   const artHistory = document.createElement("h3");
   artHistory.setAttribute("class", "player-choices history");
   artHistory.innerText = "Artwork";
-  // artHistory.dataset.on = false;
-  artHistory.addEventListener("click", history);
   artHistory.dataset.on = false;
+
+  const scoreboard = document.createElement("h3");
+  scoreboard.setAttribute("class", "player-choices scoreboard");
+  scoreboard.innerText = "Scoreboard";
+  scoreboard.dataset.on = false;
 
   selectorContainer.append(
     gameHeader,
     playerOneHeader,
     playerTwoHeader,
-    artHistory
+    artHistory,
+    scoreboard
   );
 
   spaContainer.append(selectorContainer);
 
-  let direction = true;
-
-  let currentSelection = 1;
-
-  const processMenuDirections = e => {
-    console.log(e.code);
+  let currentSelection = 0;
+  const processMenuDirectionsNumbers = e => {
     if (e.code === "Enter") {
-      window.removeEventListener("keydown", processMenuDirections);
+      window.removeEventListener("keydown", processMenuDirectionsNumbers);
       switch (currentSelection) {
         case 1:
           makeArt();
           break;
         case 2:
-          youLost();
+          guessImage();
           break;
         case 3:
           history();
+          break;
+        case 4:
+          showScoreboard();
           break;
       }
     } else if (e.code === "Digit1") {
@@ -146,29 +248,86 @@ const playerChoice = () => {
       playerOneHeader.dataset.on = true;
       playerTwoHeader.dataset.on = false;
       artHistory.dataset.on = false;
+      scoreboard.dataset.on = false;
     } else if (e.code === "Digit2") {
       currentSelection = 2;
       playerTwoHeader.dataset.on = true;
       playerOneHeader.dataset.on = false;
       artHistory.dataset.on = false;
+      scoreboard.dataset.on = false;
     } else if (e.code === "Digit3") {
       currentSelection = 3;
       artHistory.dataset.on = true;
       playerOneHeader.dataset.on = false;
       playerTwoHeader.dataset.on = false;
+      scoreboard.dataset.on = false;
+    } else if (e.code === "Digit4") {
+      currentSelection = 4;
+      scoreboard.dataset.on = true;
+      artHistory.dataset.on = false;
+      playerOneHeader.dataset.on = false;
+      playerTwoHeader.dataset.on = false;
     }
   };
 
-  window.addEventListener("keydown", processMenuDirections);
-};
+  const processMenuDirectionsEnter = e => {
+    e.target.dataset.on = true;
+  };
 
-playerChoice();
+  const processMenuDirectionsLeave = e => {
+    e.target.dataset.on = false;
+  };
+
+  const clickThrough = e => {
+    window.addEventListener("keydown", processMenuDirectionsNumbers);
+    switch (e.target.innerText) {
+      case "Draw Something":
+        makeArt();
+        break;
+      case "Guess Something":
+        guessImage();
+        break;
+      case "Artwork":
+        history();
+        break;
+      case "Scoreboard":
+        showScoreboard();
+        break;
+    }
+  };
+
+  window.addEventListener("keydown", processMenuDirectionsNumbers);
+
+  // listeners
+  const withClickAndProceed = withMouseClick(clickThrough);
+  const withMouseOverAndProceed = withMouseOver(processMenuDirectionsEnter);
+  const withMouseLeaveProceed = withMouseLeave(processMenuDirectionsLeave);
+
+  withClickAndProceed(gameHeader);
+  withMouseOverAndProceed(gameHeader);
+  withMouseLeaveProceed(gameHeader);
+
+  withClickAndProceed(playerOneHeader);
+  withMouseOverAndProceed(playerOneHeader);
+  withMouseLeaveProceed(playerOneHeader);
+
+  withClickAndProceed(playerTwoHeader);
+  withMouseOverAndProceed(playerTwoHeader);
+  withMouseLeaveProceed(playerTwoHeader);
+
+  withClickAndProceed(artHistory);
+  withMouseOverAndProceed(artHistory);
+  withMouseLeaveProceed(artHistory);
+
+  withClickAndProceed(scoreboard);
+  withMouseOverAndProceed(scoreboard);
+  withMouseLeaveProceed(scoreboard);
+};
 
 const makeArt = () => {
   // const selectorContainer = document.querySelector(".selector-container");
   // if (selectorContainer) spaContainer.removeChild(selectorContainer);
-  spaContainer.innerHTML = ""
-
+  spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
   imageShowcase.setAttribute("class", "image-showcase");
@@ -387,7 +546,7 @@ const makeArt = () => {
       }
     });
     saveRedrawButton.removeEventListener("click", saveImage);
-    saveRedrawButton.innerText = "Draw Another"
+    saveRedrawButton.innerText = "Draw Another";
     saveRedrawButton.addEventListener("click", makeArt);
   };
 
@@ -425,10 +584,9 @@ const makeArt = () => {
   backToMenu.setAttribute("class", "back-to-menu");
   backToMenu.innerText = "Back to Menu";
 
-  backToMenu.addEventListener("click", playerChoice)
+  backToMenu.addEventListener("click", playerChoice);
 
   pixelArtContainer.append(table, backToMenu);
-
 
   for (let i = 0; i < 16; i++) {
     let row = document.createElement("tr");
@@ -436,6 +594,7 @@ const makeArt = () => {
     for (let j = 0; j < 16; j++) {
       let cell = document.createElement("td");
       cell.setAttribute("class", `panel-element-${j}`);
+      cell.setAttribute("draggable", false);
       row.append(cell);
     }
     table.append(row);
@@ -447,19 +606,6 @@ const makeArt = () => {
 
   const triggerFalse = () => (trigger = false);
   const triggerTrue = () => (trigger = true);
-
-  // const withClick = listen("click")...etc
-  const withEvent = eventType => listener => element => {
-    element.addEventListener(eventType, listener);
-  };
-
-  // event types
-  const withMouseClick = withEvent("click");
-  const withMouseDown = withEvent("mousedown");
-  const withMouseUp = withEvent("mouseup");
-  const withMouseOver = withEvent("mouseover");
-  const withMouseEnter = withEvent("mouseenter");
-  const withMouseLeave = withEvent("mouseleave");
 
   // listeners
   const withMouseClickAddRemoveColor = withMouseClick(addRemoveColor);
@@ -484,17 +630,6 @@ const makeArt = () => {
   });
 };
 
-// const playerOneHeader = document.querySelector(".drawer");
-// playerOneHeader.addEventListener("click", makeArt);
-
-// const youWin = () => {
-//   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-//   body.style.backgroundImage = `url(${im})`;
-//   body.style.backgroundRepeat = "no-repeat";
-//   body.style.backgroundSize = "cover";
-//   spaContainer.removeChild(document.querySelector(".selector-container"));
-// };
-
 const youLost = () => {
   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
   body.style.backgroundImage = `url(${im})`;
@@ -503,3 +638,5 @@ const youLost = () => {
 
   spaContainer.removeChild(document.querySelector(".selector-container"));
 };
+
+playerChoice();
