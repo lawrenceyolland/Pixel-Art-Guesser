@@ -6,23 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Game.all.destroy_all
 User.all.destroy_all
 Art.all.destroy_all
-Category.all.destroy_all
-Game.all.destroy_all
 
 lawrence = User.create(name: "Lawrence")
 aruna = User.create(name: "Aruna")
+fede = User.create(name: "Federica")
+amy = User.create(name: "Amy")
+louise = User.create(name: "Louise")
+jowita = User.create(name: "Jowita")
 
 puts "----SEEDED USERS-----"
 
-dog = Category.create(name: "Dog")
-cat = Category.create(name: "Cat")
-house = Category.create(name: "House")
-rocket = Category.create(name: "Rocket")
-baloon = Category.create(name: "Baloon")
-xmastree = Category.create(name: "Xmas Tree")
-cabbage = Category.create(name: "Cabbage")
+games = Game.create ([
+    {user_id: lawrence.id, score: rand(1..500)},
+    {user_id: aruna.id, score: rand(1..500)},
+    {user_id: fede.id, score: rand(1..500)},
+    {user_id: amy.id, score: rand(1..500)},
+    {user_id: louise.id, score: rand(1..500)},
+    {user_id: jowita.id, score: rand(1..500)},
+    {user_id: lawrence.id, score: rand(1..500)}
+])
+
+puts "----SEEDED GAMES-----"
 
 
-puts "----SEEDED CATEGORY-----"
+arts = Art.create ([
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"},
+    {title: Faker::Hipster.word, img_url: "http://lorempixel.com/386/386/"}
+])
+
+puts "----SEEDED ARTS-----"
