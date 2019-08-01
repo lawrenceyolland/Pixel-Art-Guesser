@@ -2,6 +2,10 @@ const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
 
+const baseUrlArts = "http://localhost:3000//api/v1/arts";
+const baseUrlUsers = "http://localhost:3000//api/v1/users";
+const baseUrlGames = "http://localhost:3000//api/v1/games";
+
 const withEvent = eventType => listener => element => {
   element.addEventListener(eventType, listener);
 };
@@ -14,11 +18,260 @@ const withMouseOver = withEvent("mouseover");
 const withMouseEnter = withEvent("mouseenter");
 const withMouseLeave = withEvent("mouseleave");
 
+const guessSomething = () => {
+  //---- appendNewGameForm()
+
+  const fetchPostNewUser = name_value => {
+    return fetch(baseUrlUsers, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: {
+          name: name_value
+        }
+      })
+    });
+  };
+
+  //   spaContainer.innerHTML = "";
+  //   spaContainer.innerHTML = `
+  //   <div class="image-container">
+  //   <img src="http://lorempixel.com/200/300" />
+  //   <div class="after"></div>
+  // </div>
+  // `;
+
+  //   const overlay = document.querySelector(".after");
+  //   let height = 100;
+
+  //   const runReveal = () => {
+  //     overlay.style.height = `${height}%`;
+  //     t = setTimeout(() => {
+  //       if (height != 0) {
+  //         height -= 5;
+  //         runReveal();
+  //         console.log(height);
+  //       }
+  //     }, 2000);
+  //   };
+
+  const appendNewGameForm = () => {
+    spaContainer.innerHTML = "";
+
+    const newSectionUser = document.createElement("section");
+    newSectionUser.id = "section-new-user";
+    const newTextP = document.createElement("p");
+    newTextP.innerText = "Hello Player! What is your name?";
+
+    const newUserForm = document.createElement("form");
+    newUserForm.id = "new-user-form";
+
+    const newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.id = "user_name";
+    const newButton = document.createElement("button");
+    newButton.type = "submit";
+    newButton.className = "user-button";
+    newButton.innerText = "New Player!";
+    newUserForm.addEventListener("submit", event => addingUser(event));
+    newUserForm.append(newInput, newButton);
+
+    newSectionUser.append(newTextP, newUserForm);
+
+    spaContainer.appendChild(newSectionUser);
+  };
+
+  appendNewGameForm();
+
+  const addingUser = event => {
+    event.preventDefault();
+    const name = event.target.user_name.value;
+    if (name == "") {
+      alert("Put Name in!");
+    } else {
+      fetchPostNewUser(name).then(startGuessGame);
+    }
+  };
+
+  const fetchGetUsers = () => {
+    return fetch(baseUrlUsers).then(resp => resp.json());
+  };
+
+  const startGuessGame = () => {
+    fetchGetUsers()
+      .then(users => {
+        const all_users = users.data;
+        return users.data[all_users.length - 1];
+      })
+      .then(assignArtToGuess);
+  };
+
+  //--- goes to guess_game
+  let globalScore = 0;
+
+  fetchAllArts = () => {
+    return fetch(baseUrlArts).then(resp => resp.json());
+  };
+
+  const assignArtToGuess = user => {
+    spaContainer.innerHTML = "";
+    fetchAllArts().then(arts => appendRandomArt(arts, user));
+  };
+
+  const appendRandomArt = (arts, user) => {
+    const random_number = Math.floor(Math.random(arts.data.length) * 10);
+    const picked_art = arts.data[random_number];
+    const artDiv = document.createElement("div");
+    artDiv.id = "div-art-guess";
+    artDiv.dataset.user_id = user.id;
+    artDiv.dataset.img_id = picked_art.id;
+    const artImg = document.createElement("img");
+    artImg.src = picked_art.attributes.img_url;
+
+    const guessForm = document.createElement("form");
+    guessForm.id = "guess-form";
+    const guessFormLabel = document.createElement("label");
+    const guessFormInput = document.createElement("input");
+    guessFormInput.id = "guess_input";
+    guessFormLabel.for = "guess_input";
+    guessFormInput.type = "text";
+    const guessFormButton = document.createElement("button");
+    guessFormButton.innerText = "Guess!";
+    guessFormButton.className = "guess-button";
+    const title = picked_art.attributes.title;
+    guessForm.addEventListener("submit", event =>
+      checkAnswer(event, title, user)
+    );
+
+    guessForm.append(guessFormLabel, guessFormInput, guessFormButton);
+
+    artDiv.append(artImg, guessForm);
+
+    spaContainer.append(artDiv);
+  };
+
+  const checkAnswer = (event, title, user) => {
+    event.preventDefault();
+    const answer = event.target.guess_input.value;
+    const title_downcase = title.toLowerCase().trim();
+    const answer_downcase = answer.toLowerCase().trim();
+    if (title_downcase.valueOf() === answer_downcase.valueOf()) {
+      globalScore += 100;
+      assignArtToGuess(user);
+    } else {
+      fetchPostGame(globalScore, user).then(endGame);
+    }
+  };
+
+  const fetchPostGame = (gscore, user) => {
+    return fetch(baseUrlGames, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        game: {
+          user_id: user.id,
+          score: gscore
+        }
+      })
+    });
+  };
+
+  const endGame = () => {
+    spaContainer.innerHTML = "";
+
+    const endMessage = document.createElement("h3");
+    endMessage.innerText = `Game Over: ${globalScore}`;
+
+    const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
+    body.style.backgroundImage = `url(${im})`;
+    body.style.backgroundRepeat = "no-repeat";
+    body.style.backgroundSize = "cover";
+
+    const selectorContainer = document.createElement("div");
+    selectorContainer.setAttribute("class", "selector-container");
+
+    const header = document.createElement("h3");
+    header.setAttribute("class", "player-choices game-over-header");
+    header.dataset.on = false;
+    header.innerText = "Return to Menu";
+
+    const scoreboard = document.createElement("h3");
+    scoreboard.setAttribute("class", "player-choices game-over-header");
+    scoreboard.innerText = "Scoreboard";
+    scoreboard.dataset.on = false;
+
+    selectorContainer.append(header, scoreboard);
+
+    spaContainer.append(endMessage, selectorContainer);
+
+    //  these get reused later so clean this up
+    const processMenuDirectionsEnter = e => {
+      e.target.dataset.on = true;
+    };
+
+    const processMenuDirectionsLeave = e => {
+      e.target.dataset.on = false;
+    };
+
+    let currentSelection = 0;
+    const processMenuDirectionsNumbers = e => {
+      if (e.code === "Enter") {
+        window.removeEventListener("keydown", processMenuDirectionsNumbers);
+        switch (currentSelection) {
+          case 1:
+            playerChoice();
+            break;
+          case 2:
+            showScoreboard();
+            break;
+        }
+      } else if (e.code === "Digit1") {
+        currentSelection = 1;
+        header.dataset.on = true;
+        scoreboard.dataset.on = false;
+      } else if (e.code === "Digit2") {
+        currentSelection = 2;
+        header.dataset.on = false;
+        scoreboard.dataset.on = true;
+      }
+    };
+
+    window.addEventListener("keydown", processMenuDirectionsNumbers);
+
+    const clickThrough = e => {
+      window.addEventListener("keydown", processMenuDirectionsNumbers);
+      switch (e.target.innerText) {
+        case "Return to Menu":
+          playerChoice();
+          break;
+        case "Scoreboard":
+          showScoreboard();
+          break;
+      }
+    };
+
+    const withClickAndProceed = withMouseClick(clickThrough);
+    const withMouseOverAndProceed = withMouseOver(processMenuDirectionsEnter);
+    const withMouseLeaveProceed = withMouseLeave(processMenuDirectionsLeave);
+
+    withClickAndProceed(header);
+    withMouseOverAndProceed(header);
+    withMouseLeaveProceed(header);
+
+    withClickAndProceed(scoreboard);
+    withMouseOverAndProceed(scoreboard);
+    withMouseLeaveProceed(scoreboard);
+  };
+};
+
 const showScoreboard = () => {
   console.log("the event listener worked");
-  const baseUrlGames = "http://localhost:3000//api/v1/games";
-  const baseUrlUsers = "http://localhost:3000//api/v1/users";
-
+  spaContainer.innerHTML = "";
+  body.style.backgroundImage = "none";
   const fetchScoreBoards = () => {
     return fetch(baseUrlGames).then(resp => resp.json());
   };
@@ -61,43 +314,43 @@ const showScoreboard = () => {
     });
 
     boardDiv.appendChild(boardUl);
-    selectedBody.appendChild(boardDiv);
+    spaContainer.appendChild(boardDiv);
   };
+  createLeaderBoards();
 };
 
-const guessImage = () => {
-  spaContainer.innerHTML = "";
-  spaContainer.innerHTML = `
-  <div class="image-container">
-  <img src="http://lorempixel.com/200/300" />
-  <div class="after"></div>
-</div>
-`;
+// const guessImage = () => {
+//   spaContainer.innerHTML = "";
+//   spaContainer.innerHTML = `
+//   <div class="image-container">
+//   <img src="http://lorempixel.com/200/300" />
+//   <div class="after"></div>
+// </div>
+// `;
 
-  const overlay = document.querySelector(".after");
-  let height = 100;
+//   const overlay = document.querySelector(".after");
+//   let height = 100;
 
-  const runReveal = () => {
-    overlay.style.height = `${height}%`;
-    t = setTimeout(() => {
-      if (height != 0) {
-        height -= 5;
-        runReveal();
-        console.log(height);
-      }
-    }, 2000);
-  };
+//   const runReveal = () => {
+//     overlay.style.height = `${height}%`;
+//     t = setTimeout(() => {
+//       if (height != 0) {
+//         height -= 5;
+//         runReveal();
+//         console.log(height);
+//       }
+//     }, 2000);
+//   };
 
-  const button = document.createElement("button");
-  button.innerText = "reveal";
+//   const button = document.createElement("button");
+//   button.innerText = "reveal";
 
-  button.addEventListener("click", runReveal);
+//   button.addEventListener("click", runReveal);
 
-  spaContainer.append(button);
-};
+//   spaContainer.append(button);
+// };
 
 const history = () => {
-  const baseUrlArts = "http://localhost:3000//api/v1/arts";
   const per_page = n => `/?per_page=9&page=${n}`;
   const headTitle = document.querySelector("#head-title");
   headTitle.dataset.history_page = 1;
@@ -186,6 +439,8 @@ const history = () => {
 };
 
 const playerChoice = () => {
+  body.style.backgroundImage = "none";
+
   spaContainer.innerHTML = "";
 
   const selectorContainer = document.createElement("div");
@@ -196,22 +451,22 @@ const playerChoice = () => {
   gameHeader.innerText = "Play a New Game";
 
   const playerOneHeader = document.createElement("h3");
-  playerOneHeader.setAttribute("class", "player-choices drawer");
+  playerOneHeader.setAttribute("class", "menu-title player-choices drawer");
   playerOneHeader.innerText = "Draw Something";
   playerOneHeader.dataset.on = false;
 
   const playerTwoHeader = document.createElement("h3");
-  playerTwoHeader.setAttribute("class", "player-choices guesser");
+  playerTwoHeader.setAttribute("class", "menu-title player-choices guesser");
   playerTwoHeader.innerText = "Guess Something";
   playerOneHeader.dataset.on = false;
 
   const artHistory = document.createElement("h3");
-  artHistory.setAttribute("class", "player-choices history");
+  artHistory.setAttribute("class", "menu-title player-choices history");
   artHistory.innerText = "Artwork";
   artHistory.dataset.on = false;
 
   const scoreboard = document.createElement("h3");
-  scoreboard.setAttribute("class", "player-choices scoreboard");
+  scoreboard.setAttribute("class", "menu-title player-choices scoreboard");
   scoreboard.innerText = "Scoreboard";
   scoreboard.dataset.on = false;
 
@@ -234,7 +489,7 @@ const playerChoice = () => {
           makeArt();
           break;
         case 2:
-          guessImage();
+          guessSomething();
           break;
         case 3:
           history();
@@ -285,7 +540,7 @@ const playerChoice = () => {
         makeArt();
         break;
       case "Guess Something":
-        guessImage();
+        guessSomething();
         break;
       case "Artwork":
         history();
@@ -630,13 +885,13 @@ const makeArt = () => {
   });
 };
 
-const youLost = () => {
-  const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
-  body.style.backgroundImage = `url(${im})`;
-  body.style.backgroundRepeat = "no-repeat";
-  body.style.backgroundSize = "cover";
+// const youLost = () => {
+//   const im = "https://media.giphy.com/media/3o7aD4pR1HbHJFTBF6/giphy.gif";
+//   body.style.backgroundImage = `url(${im})`;
+//   body.style.backgroundRepeat = "no-repeat";
+//   body.style.backgroundSize = "cover";
 
-  spaContainer.removeChild(document.querySelector(".selector-container"));
-};
+//   spaContainer.removeChild(document.querySelector(".selector-container"));
+// };
 
 playerChoice();

@@ -68,27 +68,56 @@ td:hover {
   font-family: "Press Start 2P", cursive;
 }
 
-.player-choices[data-on="true"]:hover {
+.menu-title[data-on="true"]:hover {
   color: #f9009a;
 }
-.player-choices[data-on="true"]:hover:before {
+.menu-title[data-on="true"]:hover:before {
   content: "> ";
 }
 
-.player-choices[data-on="true"]:hover:after {
+.menu-title[data-on="true"]:hover:after {
   content: " <";
 }
 
-.player-choices[data-on="true"] {
+.menu-title[data-on="true"] {
   color: #f9009a;
 }
-.player-choices[data-on="true"]:before {
+.menu-title[data-on="true"]:before {
   content: "> ";
 }
 
-.player-choices[data-on="true"]:after {
+.menu-title[data-on="true"]:after {
   content: " <";
 }
+
+/* ~~~~~~~~~ */
+
+
+.game-over-header[data-on="true"]:hover {
+  color: #f9009a;
+}
+.game-over-header[data-on="true"]:hover:before {
+  content: "> ";
+}
+
+.game-over-header[data-on="true"]:hover:after {
+  content: " <";
+}
+
+.game-over-header[data-on="true"] {
+  color: #f9009a;
+}
+.game-over-header[data-on="true"]:before {
+  content: "> ";
+}
+
+.game-over-header[data-on="true"]:after {
+  content: " <";
+}
+
+
+/* ~~~~~~~~~ */
+
 
 .game-header {
   display: inline-block;
