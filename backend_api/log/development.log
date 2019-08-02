@@ -7820,3 +7820,498 @@ Processing by Api::V1::GamesController#index as */*
 Completed 200 OK in 54ms (Views: 42.9ms | ActiveRecord: 11.0ms)
 
 
+Started GET "//api/v1/games" for ::1 at 2019-08-02 09:29:44 +0100
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (7.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+Completed 200 OK in 187ms (Views: 140.4ms | ActiveRecord: 21.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:29:48 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (8.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 32ms (Views: 15.9ms | ActiveRecord: 12.4ms)
+
+
+Started POST "//api/v1/arts" for ::1 at 2019-08-02 09:32:02 +0100
+Processing by Api::V1::ArtsController#create as */*
+  Parameters: {"art"=>{"title"=>"red circle", "img_url"=>"data:image/png;base64,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"}}
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+  [1m[36mArt Create (25.2ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-08-02 08:32:02.849324"], ["updated_at", "2019-08-02 08:32:02.849324"], ["title", "red circle"], ["img_url", "data:image/png;base64,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"]]
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+Completed 204 No Content in 72ms (ActiveRecord: 29.3ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:32:09 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (4.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 22ms (Views: 10.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-02 09:32:10 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (2.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 23ms (Views: 15.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=3" for ::1 at 2019-08-02 09:32:11 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"3"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (2.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 18]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=4" for ::1 at 2019-08-02 09:32:11 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"4"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (0.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 27]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=3" for ::1 at 2019-08-02 09:32:14 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"3"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (10.5ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 18]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 31ms (Views: 17.6ms | ActiveRecord: 11.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-02 09:32:25 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (10.1ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 26ms (Views: 13.2ms | ActiveRecord: 10.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:32:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "//api/v1/games" for ::1 at 2019-08-02 09:32:47 +0100
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+Completed 200 OK in 69ms (Views: 57.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "//api/v1/games" for ::1 at 2019-08-02 09:33:16 +0100
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+Completed 200 OK in 83ms (Views: 71.4ms | ActiveRecord: 10.7ms)
+
+
+Started POST "//api/v1/arts" for ::1 at 2019-08-02 09:35:34 +0100
+Processing by Api::V1::ArtsController#create as */*
+  Parameters: {"art"=>{"title"=>"Custard Cream", "img_url"=>"data:image/png;base64,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"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+  [1m[36mArt Create (3.0ms)[0m  [1m[32mINSERT INTO "arts" ("created_at", "updated_at", "title", "img_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-08-02 08:35:34.095332"], ["updated_at", "2019-08-02 08:35:34.095332"], ["title", "Custard Cream"], ["img_url", "data:image/png;base64,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"]]
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/arts_controller.rb:8
+Completed 204 No Content in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:37:59 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=2" for ::1 at 2019-08-02 09:38:24 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.6ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 9]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=3" for ::1 at 2019-08-02 09:38:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"3"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 18]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "//api/v1/users" for ::1 at 2019-08-02 09:42:34 +0100
+Started POST "//api/v1/users" for ::1 at 2019-08-02 09:42:34 +0100
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"dgbgd"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[36mUser Create (6.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dgbgd"], ["created_at", "2019-08-02 08:42:34.666638"], ["updated_at", "2019-08-02 08:42:34.666638"]]
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 204 No Content in 38ms (ActiveRecord: 7.9ms)
+
+
+Started GET "//api/v1/users" for ::1 at 2019-08-02 09:42:34 +0100
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.8ms)
+
+
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"dgbgd"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dgbgd"], ["created_at", "2019-08-02 08:42:34.729563"], ["updated_at", "2019-08-02 08:42:34.729563"]]
+Started GET "//api/v1/arts" for ::1 at 2019-08-02 09:42:34 +0100
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Processing by Api::V1::ArtsController#index as */*
+Completed 204 No Content in 11ms (ActiveRecord: 5.6ms)
+
+
+Started GET "//api/v1/users" for ::1 at 2019-08-02 09:42:34 +0100
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mArt Load (17.9ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 62ms (Views: 22.8ms | ActiveRecord: 21.7ms)
+
+
+Started GET "//api/v1/arts" for ::1 at 2019-08-02 09:42:34 +0100
+Processing by Api::V1::ArtsController#index as */*
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (4.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 56ms (Views: 47.5ms | ActiveRecord: 6.4ms)
+
+
+Started POST "//api/v1/users" for ::1 at 2019-08-02 09:42:45 +0100
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"cd"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cd"], ["created_at", "2019-08-02 08:42:45.392022"], ["updated_at", "2019-08-02 08:42:45.392022"]]
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 204 No Content in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "//api/v1/users" for ::1 at 2019-08-02 09:42:45 +0100
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 43ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//api/v1/arts" for ::1 at 2019-08-02 09:42:45 +0100
+Processing by Api::V1::ArtsController#index as */*
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (2.5ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 3.2ms)
+
+
+Started POST "//api/v1/games" for ::1 at 2019-08-02 09:43:27 +0100
+Processing by Api::V1::GamesController#create as */*
+  Parameters: {"game"=>{"user_id"=>"58", "score"=>0}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mGame Create (17.2ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 58], ["created_at", "2019-08-02 08:43:27.586566"], ["updated_at", "2019-08-02 08:43:27.586566"], ["score", 0]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+Completed 204 No Content in 25ms (ActiveRecord: 18.7ms)
+
+
+Started POST "//api/v1/users" for ::1 at 2019-08-02 09:45:03 +0100
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"csdbshjd"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "csdbshjd"], ["created_at", "2019-08-02 08:45:03.081381"], ["updated_at", "2019-08-02 08:45:03.081381"]]
+  ↳ app/controllers/api/v1/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7
+Completed 204 No Content in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "//api/v1/users" for ::1 at 2019-08-02 09:45:03 +0100
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "//api/v1/arts" for ::1 at 2019-08-02 09:45:03 +0100
+Processing by Api::V1::ArtsController#index as */*
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (7.5ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 31ms (Views: 21.5ms | ActiveRecord: 8.0ms)
+
+
+Started POST "//api/v1/games" for ::1 at 2019-08-02 09:45:09 +0100
+Processing by Api::V1::GamesController#create as */*
+  Parameters: {"game"=>{"user_id"=>"59", "score"=>85}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mGame Create (0.8ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 59], ["created_at", "2019-08-02 08:45:09.320994"], ["updated_at", "2019-08-02 08:45:09.320994"], ["score", 85]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+Completed 204 No Content in 9ms (ActiveRecord: 2.3ms)
+
+
+Started POST "//api/v1/games" for ::1 at 2019-08-02 09:45:45 +0100
+Processing by Api::V1::GamesController#create as */*
+  Parameters: {"game"=>{"user_id"=>"59", "score"=>0}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[36mGame Create (1.8ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at", "score") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 59], ["created_at", "2019-08-02 08:45:45.223708"], ["updated_at", "2019-08-02 08:45:45.223708"], ["score", 0]]
+  ↳ app/controllers/api/v1/games_controller.rb:11
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:11
+Completed 204 No Content in 10ms (ActiveRecord: 4.1ms)
+
+

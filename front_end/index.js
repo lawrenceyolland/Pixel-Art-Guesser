@@ -49,6 +49,8 @@ const guessSomething = () => {
     const newInput = document.createElement("input");
     newInput.type = "text";
     newInput.id = "user_name";
+    newInput.className = "inp";
+
     const newButton = document.createElement("button");
     newButton.type = "submit";
     newButton.className = "user-button";
@@ -564,7 +566,6 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
-
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
@@ -750,8 +751,6 @@ const makeArt = () => {
     colorPalette.style.display = "none";
   };
 
-
-  
   let colorInput = document.getElementById("colorPicker");
   let colorPalette = document.getElementById("colorPalette");
 
@@ -771,7 +770,7 @@ const makeArt = () => {
   saveRedrawButton.setAttribute("class", "save-redraw-button");
   saveRedrawButton.innerText = "Save Image";
   saveRedrawButton.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
-  
+
   pixelArtContainer.append(saveRedrawButton);
 
   const drawAnother = document.createElement("button");
@@ -789,6 +788,11 @@ const makeArt = () => {
   };
 
   const saveImage = () => {
+    cells.forEach(c => {
+      if (c.style.backgroundColor === "") {
+        c.style.backgroundColor = "white";
+      }
+    });
     html2canvas(table, {
       onrendered: canvas => {
         const postData = {
@@ -820,7 +824,8 @@ const makeArt = () => {
   const changeColor = e => (e.target.style.backgroundColor = colorInput.value);
 
   const addRemoveColor = e => {
-    if (e.target.style.backgroundColor === "") { // fix this so it odesnt paint transparent
+    if (e.target.style.backgroundColor === "") {
+      // fix this so it odesnt paint transparent
       e.target.style.backgroundColor = colorInput.value;
     } else {
       e.target.style.backgroundColor = "";
@@ -836,7 +841,6 @@ const makeArt = () => {
   const table = document.createElement("table");
   table.setAttribute("id", "capture");
   table.style.border = `5px solid ${colorInput.value}`;
-
 
   const backToMenu = document.createElement("button");
   backToMenu.setAttribute("class", "back-to-menu");
@@ -859,7 +863,7 @@ const makeArt = () => {
     table.append(row);
   }
 
-  table.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)"
+  table.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
 
   const cells = document.querySelectorAll("td");
 
