@@ -378,8 +378,6 @@ const history = () => {
     const previousButton = document.createElement("button");
     previousButton.setAttribute("class", "history-button previous");
     previousButton.innerText = "Previous";
-    // previous button should be disable by default
-    // previousButton.setAttribute("disabled", true)
 
     previousButton.addEventListener("click", event =>
       previousHistoryPage(event)
@@ -391,12 +389,14 @@ const history = () => {
 
     nextButton.addEventListener("click", event => nextHistoryPage(event));
 
-    const pageArts = document.createElement("p");
-    pageArts.innerText = `This Page Art #: ${arts.data.length}`;
+    const backToMenu = document.createElement("button");
+    backToMenu.setAttribute("class", "back-to-menu back-button");
+    backToMenu.innerText = "Back to Menu";
+    backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
+  
+    backToMenu.addEventListener("click", playerChoice);
 
-    historyDiv.append(previousButton, nextButton, pageArts);
-
-    spaContainer.appendChild(historyDiv);
+    spaContainer.append(previousButton, nextButton, backToMenu, historyDiv);
 
     arts.data.forEach(art => {
       const eachArtDivElem = document.createElement("div");
@@ -407,9 +407,10 @@ const history = () => {
       eachArtImg.setAttribute("src", art.attributes.img_url);
       eachArtImg.setAttribute("class", "img pixel-drawing");
 
-      const eachPArtElem = document.createElement("p");
-      eachPArtElem.innerText = art.attributes.title;
-      eachArtDivElem.append(eachArtImg, eachPArtElem);
+      const artTitle = document.createElement("p");
+      artTitle.innerText = art.attributes.title;
+      artTitle.className = "art-title"
+      eachArtDivElem.append(artTitle, eachArtImg);
 
       historyDiv.appendChild(eachArtDivElem);
     });

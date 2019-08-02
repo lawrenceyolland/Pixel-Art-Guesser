@@ -60,7 +60,6 @@ td:hover {
   color: grey;
 }
 
-
 .selector-container {
   position: absolute;
   width: 400px;
@@ -86,10 +85,10 @@ td:hover {
 .menu-title,
 .game-header {
   color: white;
-  -webkit-transition: color 2s;
-  -moz-transition: color 2s;
-    -o-transition: color 2s;
-       transition: color 2s;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  -o-transition: color 1s;
+  transition: color 1s;
 }
 
 .menu-title[data-on="true"]:hover {
@@ -139,7 +138,6 @@ td:hover {
 .game-over-header[data-on="true"]:after {
   content: " <";
 }
-
 
 p {
   color: white;
@@ -240,7 +238,19 @@ form {
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative;
+  /* font-family: "Press Start 2P", cursive; */
+}
+
+.next,
+.previous,
+.back-button {
+  width: 12%;
+  padding: 5px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
   font-family: "Press Start 2P", cursive;
+  color: grey;
 }
 
 .previous:before {
@@ -249,4 +259,9 @@ form {
 
 .next:after {
   content: " >";
+}
+
+.art-title {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); */
 }

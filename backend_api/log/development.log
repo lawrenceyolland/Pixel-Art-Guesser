@@ -8315,3 +8315,323 @@ Processing by Api::V1::GamesController#create as */*
 Completed 204 No Content in 10ms (ActiveRecord: 4.1ms)
 
 
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:53:28 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (3.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 43ms (Views: 22.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:54:04 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.7ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:54:38 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:54:57 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.6ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:55:10 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (6.8ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 28ms (Views: 17.1ms | ActiveRecord: 8.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:56:52 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (3.6ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 43ms (Views: 21.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "//api/v1/games" for ::1 at 2019-08-02 09:57:01 +0100
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (2.1ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+Completed 200 OK in 120ms (Views: 103.6ms | ActiveRecord: 15.4ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:57:19 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 09:58:41 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (2.7ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:00:15 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (2.0ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 33ms (Views: 14.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:00:23 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.8ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:00:37 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:01:35 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.6ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:01:48 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.3ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:02:06 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.6ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 20ms (Views: 13.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:02:21 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.4ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:02:44 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.2ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "//api/v1/arts/?per_page=9&page=1" for ::1 at 2019-08-02 10:03:21 +0100
+Processing by Api::V1::ArtsController#index as */*
+  Parameters: {"per_page"=>"9", "page"=>"1"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "arts"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/kaminari-activerecord-1.1.1/lib/kaminari/activerecord/active_record_relation_methods.rb:33
+  [1m[36mArt Load (1.7ms)[0m  [1m[34mSELECT  "arts".* FROM "arts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+Completed 200 OK in 17ms (Views: 9.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "//api/v1/games" for ::1 at 2019-08-02 10:03:24 +0100
+Processing by Api::V1::GamesController#index as */*
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/object_serializer.rb:57
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ /Users/lawrenceyolland/.rvm/gems/ruby-2.6.3/gems/fast_jsonapi-1.5/lib/fast_jsonapi/relationship.rb:51
+Completed 200 OK in 98ms (Views: 85.1ms | ActiveRecord: 11.4ms)
+
+
