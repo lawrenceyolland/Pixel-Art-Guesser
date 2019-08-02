@@ -1,3 +1,5 @@
+
+
 .image-container {
   position: relative;
   width: 386px;
@@ -73,6 +75,20 @@ td:hover {
   text-align: center;
 }
 
+.selector-container-endgame {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+}
+
 .player-choices {
   display: block;
   text-align: center;
@@ -114,8 +130,6 @@ td:hover {
 .menu-title[data-on="true"]:after {
   content: " <";
 }
-
-/* ~~~~~~~~~ */
 
 .game-over-header[data-on="true"]:hover {
   color: white;
@@ -216,20 +230,20 @@ form {
 }
 
 /* STYLING FOR HISTORY PAGE */
-
 .history_main_div {
-  /* container for the image divs */
+  position: absolute;
+  z-index: 15;
+  text-align: center;
 }
 
 .art_div {
+  position: relative;
   text-align: center;
-  /* border: grey solid 1px; */
   padding: 1rem;
   width: 400px;
   height: 400px;
   display: inline-grid;
   margin: 0 10px 10px 0;
-  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); */
 }
 
 .pixel-drawing {
@@ -238,7 +252,6 @@ form {
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative;
-  /* font-family: "Press Start 2P", cursive; */
 }
 
 .next,
@@ -263,5 +276,8 @@ form {
 
 .art-title {
   background-color: rgba(0, 0, 0, 0.2);
-  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); */
+}
+
+h3 {
+  font-family: "Press Start 2P", cursive;
 }

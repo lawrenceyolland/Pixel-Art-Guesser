@@ -88,8 +88,6 @@ const guessSomething = () => {
       .then(assignArtToGuess);
   };
 
-  let globalScore = 100;
-
   fetchAllArts = () => {
     return fetch(baseUrlArts).then(resp => resp.json());
   };
@@ -98,10 +96,16 @@ const guessSomething = () => {
     spaContainer.innerHTML = "";
     fetchAllArts().then(arts => appendRandomArt(arts, user));
   };
+  
+  // let counter = 1
+  let globalScore = 0;
 
   const appendRandomArt = (arts, user) => {
     const random_number = Math.floor(Math.random(arts.data.length) * 10);
     const picked_art = arts.data[random_number];
+
+    let height = 100;
+    let trans = 1;
 
     const artDiv = document.createElement("div");
     artDiv.setAttribute("class", "image-container");
@@ -111,9 +115,13 @@ const guessSomething = () => {
 
     const artImg = document.createElement("img");
     artImg.src = picked_art.attributes.img_url;
+    artImg.style.display = "none"
 
     const overlayDiv = document.createElement("div");
     overlayDiv.setAttribute("class", "after");
+    // const overlay = document.querySelector(".after");
+    overlayDiv.style.height = `100%`;
+    overlayDiv.style.background = `rgb(0,0,0)`;
 
     const guessForm = document.createElement("form");
     guessForm.id = "guess-form";
@@ -130,8 +138,9 @@ const guessSomething = () => {
     guessFormButton.className = "guess-button";
     const title = picked_art.attributes.title;
 
-    guessForm.addEventListener("submit", event =>
+    guessForm.addEventListener("submit", event =>{
       checkAnswer(event, title, user)
+    }
     );
 
     guessForm.append(guessFormLabel, guessFormInput, guessFormButton);
@@ -139,25 +148,20 @@ const guessSomething = () => {
     artDiv.append(overlayDiv, artImg, guessForm);
 
     spaContainer.append(artDiv);
-    artImg.style.display = "none";
-
-    const overlay = document.querySelector(".after");
-    let height = 100;
 
     const runReveal = () => {
-      overlay.style.height = `${height}%`;
-      overlay.style.background = `rgba(0,0,0,0.${height})`;
-      artImg.style.display = "";
       t = setTimeout(() => {
         if (height != 0) {
-          height -= 5;
-          globalScore = height;
+          height -= 1;
+          trans -= 0.01;
+          artImg.style.display = "block"
+          overlayDiv.style.height = `${height}%`;
+          overlayDiv.style.background = `rgba(0,0,0,${trans})`;
           runReveal();
-          console.log(height);
         } else {
-          fetchPostGame(height, user);
+          fetchPostGame(globalScore, user).then(endGame);
         }
-      }, 2000);
+      }, 100);
     };
 
     runReveal();
@@ -170,6 +174,7 @@ const guessSomething = () => {
     const answer_downcase = answer.toLowerCase().trim();
 
     if (title_downcase.valueOf() === answer_downcase.valueOf()) {
+      globalScore+=100
       assignArtToGuess(user);
     } else {
       fetchPostGame(globalScore, user).then(endGame);
@@ -201,9 +206,10 @@ const guessSomething = () => {
     body.style.backgroundImage = `url(${im})`;
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
+    body.style.backgroundAttachment = "fixed";
 
     const selectorContainer = document.createElement("div");
-    selectorContainer.setAttribute("class", "selector-container");
+    selectorContainer.setAttribute("class", "selector-container-endgame");
 
     const header = document.createElement("h3");
     header.setAttribute("class", "player-choices game-over-header");
@@ -331,11 +337,19 @@ const showScoreboard = () => {
         game.attributes.score
       }!`
       boardLi.appendChild(hrefForLi)
-      boardUl.appendChild(boardLi);
+      boardUl.append(boardLi);
     });
 
-    boardDiv.appendChild(boardUl);
-    spaContainer.appendChild(boardDiv);
+    const backToMenu = document.createElement("button");
+    backToMenu.setAttribute("class", "back-to-menu back-button");
+    backToMenu.innerText = "Back to Menu";
+    backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
+  
+    backToMenu.addEventListener("click", playerChoice);
+
+
+    boardDiv.append(backToMenu, boardUl);
+    spaContainer.append(boardDiv);
   };
   createLeaderBoards();
 };
