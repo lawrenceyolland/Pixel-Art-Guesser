@@ -96,8 +96,7 @@ const guessSomething = () => {
     spaContainer.innerHTML = "";
     fetchAllArts().then(arts => appendRandomArt(arts, user));
   };
-  
-  // let counter = 1
+
   let globalScore = 0;
 
   const appendRandomArt = (arts, user) => {
@@ -115,7 +114,7 @@ const guessSomething = () => {
 
     const artImg = document.createElement("img");
     artImg.src = picked_art.attributes.img_url;
-    artImg.style.display = "none"
+    artImg.style.display = "none";
 
     const overlayDiv = document.createElement("div");
     overlayDiv.setAttribute("class", "after");
@@ -130,6 +129,7 @@ const guessSomething = () => {
 
     const guessFormInput = document.createElement("input");
     guessFormInput.id = "guess_input";
+    guessFormInput.className = "guess-inp"
     guessFormLabel.for = "guess_input";
     guessFormInput.type = "text";
 
@@ -138,23 +138,21 @@ const guessSomething = () => {
     guessFormButton.className = "guess-button";
     const title = picked_art.attributes.title;
 
-    guessForm.addEventListener("submit", event =>{
-      checkAnswer(event, title, user)
-    }
-    );
+    guessForm.addEventListener("submit", event => {
+      checkAnswer(event, title, user);
+    });
 
     guessForm.append(guessFormLabel, guessFormInput, guessFormButton);
 
     artDiv.append(overlayDiv, artImg, guessForm);
 
     spaContainer.append(artDiv);
-
     const runReveal = () => {
       t = setTimeout(() => {
         if (height != 0) {
           height -= 1;
           trans -= 0.01;
-          artImg.style.display = "block"
+          artImg.style.display = "block";
           overlayDiv.style.height = `${height}%`;
           overlayDiv.style.background = `rgba(0,0,0,${trans})`;
           runReveal();
@@ -163,7 +161,7 @@ const guessSomething = () => {
         }
       }, 100);
     };
-
+    
     runReveal();
   };
 
@@ -174,7 +172,7 @@ const guessSomething = () => {
     const answer_downcase = answer.toLowerCase().trim();
 
     if (title_downcase.valueOf() === answer_downcase.valueOf()) {
-      globalScore+=100
+      globalScore += 100;
       assignArtToGuess(user);
     } else {
       fetchPostGame(globalScore, user).then(endGame);
@@ -206,7 +204,7 @@ const guessSomething = () => {
     body.style.backgroundImage = `url(${im})`;
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
-    body.style.backgroundAttachment = "fixed";
+    // body.style.backgroundAttachment = "fixed";
 
     const selectorContainer = document.createElement("div");
     selectorContainer.setAttribute("class", "selector-container-endgame");
@@ -308,9 +306,11 @@ const showScoreboard = () => {
   };
 
   const appendBodyWithLeaderBoards = ranking => {
-
-    selectedBody = document.querySelector("body")
-    selectedBody.style.backgroundImage = "url('https://media.giphy.com/media/TnFpifTlxvjkA/giphy.gif')"
+    body.style.backgroundImage =
+      "url('https://media.giphy.com/media/TnFpifTlxvjkA/giphy.gif')";
+    body.style.backgroundSize = "cover";
+    body.style.backgroundPosition = "center";
+    body.style.backgroundRepeat = "no-repeat";
 
     const games = ranking[0];
     const players = ranking[1];
@@ -320,9 +320,9 @@ const showScoreboard = () => {
 
     const boardUl = document.createElement("ul");
     boardUl.className = "boardul";
-    const newPTitle = document.createElement("p")
-    newPTitle.innerText = "TOP 10 Players!!!!!"
-    boardUl.appendChild(newPTitle)
+    const newPTitle = document.createElement("p");
+    newPTitle.innerText = "TOP 10 Players!!!!!";
+    boardUl.appendChild(newPTitle);
 
     games.forEach(game => {
       players;
@@ -331,12 +331,12 @@ const showScoreboard = () => {
         .name;
       const boardLi = document.createElement("li");
       boardLi.dataset.game_id = game.id;
-      const hrefForLi = document.createElement("a")
-      hrefForLi.href = "#"
+      const hrefForLi = document.createElement("a");
+      hrefForLi.href = "#";
       hrefForLi.innerText = `Player: ${player_name}, Score ${
         game.attributes.score
-      }!`
-      boardLi.appendChild(hrefForLi)
+      }!`;
+      boardLi.appendChild(hrefForLi);
       boardUl.append(boardLi);
     });
 
@@ -344,9 +344,8 @@ const showScoreboard = () => {
     backToMenu.setAttribute("class", "back-to-menu back-button");
     backToMenu.innerText = "Back to Menu";
     backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
-  
-    backToMenu.addEventListener("click", playerChoice);
 
+    backToMenu.addEventListener("click", playerChoice);
 
     boardDiv.append(backToMenu, boardUl);
     spaContainer.append(boardDiv);
@@ -417,7 +416,7 @@ const history = () => {
     backToMenu.setAttribute("class", "back-to-menu back-button");
     backToMenu.innerText = "Back to Menu";
     backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
-  
+
     backToMenu.addEventListener("click", playerChoice);
 
     spaContainer.append(previousButton, nextButton, backToMenu, historyDiv);
@@ -433,7 +432,7 @@ const history = () => {
 
       const artTitle = document.createElement("p");
       artTitle.innerText = art.attributes.title;
-      artTitle.className = "art-title"
+      artTitle.className = "art-title";
       eachArtDivElem.append(artTitle, eachArtImg);
 
       historyDiv.appendChild(eachArtDivElem);
@@ -448,7 +447,7 @@ const playerChoice = () => {
   body.style.backgroundImage =
     'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")';
   body.style.backgroundSize = "cover";
-  body.style.backgroundPosition = "center center";
+  body.style.backgroundPosition = "center";
   body.style.backgroundRepeat = "no-repeat";
   body.style.backgroundAttachment = "fixed";
 
@@ -600,7 +599,7 @@ const makeArt = () => {
   pixelArtContainer.style.background = "none";
 
   // Form functions
-  const form = document.createElement("form");
+  const form = document.createElement("form");form
   pixelArtContainer.append(form);
 
   const input = document.createElement("input");
@@ -850,7 +849,6 @@ const makeArt = () => {
 
   const addRemoveColor = e => {
     if (e.target.style.backgroundColor === "") {
-      // fix this so it odesnt paint transparent
       e.target.style.backgroundColor = colorInput.value;
     } else {
       e.target.style.backgroundColor = "";

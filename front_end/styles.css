@@ -1,9 +1,23 @@
+*:focus {
+  outline: none;
+}
 
+body {
+  width: 90%;
+  height: 100%;
+}
 
 .image-container {
   position: relative;
   width: 386px;
   height: 386px;
+  /* z-index: 15; */
+  top: 20%;
+  left: 50%;
+  margin: 150px auto auto -150px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .image-container .after {
@@ -21,7 +35,6 @@ table {
   border-spacing: 0; /* Removes cell spacing */
   border-collapse: collapse;
   border-radius: 5px;
-  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.2); */
   left: 50%;
 }
 
@@ -31,7 +44,6 @@ td {
   height: 20px;
   float: left;
   padding: 0px;
-  /* margin: 1px; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
 }
@@ -40,9 +52,23 @@ td:hover {
   border: 1px solid grey;
 }
 
+#guess_input {
+  margin-top: 10px;
+  width: 80%;
+  color: #800020;
+
+  border: 1px solid #949494;
+  border-radius: 3px;
+  /* margin: 0 3px 0 0; */
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 70%;
+}
+
 .save-redraw-button,
 .back-to-menu,
-.history-button {
+.history-button,
+.guess-button {
   width: 40%;
   padding: 10px;
   margin: 8px 8px 8px 0;
@@ -67,12 +93,13 @@ td:hover {
   width: 400px;
   height: 280px;
   z-index: 15;
-  top: 50%;
+  top: 45%;
   left: 50%;
   margin: -100px 0 0 -150px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  border-radius: 3px;
 }
 
 .selector-container-endgame {
@@ -86,15 +113,14 @@ td:hover {
   background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-
 }
+/*  */
 
 .player-choices {
   display: block;
   text-align: center;
   margin-bottom: 20px;
   position: relative;
-  /* top: 40%; */
   font-family: "Press Start 2P", cursive;
 }
 
@@ -275,9 +301,60 @@ form {
 }
 
 .art-title {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 h3 {
   font-family: "Press Start 2P", cursive;
+}
+
+.leaderboard {
+  margin: auto;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(255, 115, 0);
+}
+
+ul {
+  margin: 50px auto;
+  list-style: none;
+  border: 5px #adfcff solid;
+  border-radius: 5px;
+  width: 650px;
+  padding: 20px;
+  background-color: rgb(255, 250, 245, 0.1);
+}
+
+ul p {
+  text-align: center;
+  color: #aa3600;
+  padding-bottom: 20px;
+  font-size: larger;
+}
+
+li {
+  text-align: center;
+  line-height: 2.4em;
+  border-bottom: dotted 1px #adfcff;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  color: coral;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: rgb(233, 233, 233);
+  cursor: default;
+}
+
+button:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
 }
