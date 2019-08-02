@@ -322,6 +322,10 @@ const showScoreboard = () => {
   };
 
   const appendBodyWithLeaderBoards = ranking => {
+
+    selectedBody = document.querySelector("body")
+    selectedBody.style.backgroundImage = "url('https://media.giphy.com/media/TnFpifTlxvjkA/giphy.gif')"
+
     const games = ranking[0];
     const players = ranking[1];
     spaContainer.innerHTML = "";
@@ -330,6 +334,10 @@ const showScoreboard = () => {
 
     const boardUl = document.createElement("ul");
     boardUl.className = "boardul";
+    const newPTitle = document.createElement("p")
+    newPTitle.innerText = "TOP 10 Players!!!!!"
+    boardUl.appendChild(newPTitle)
+
     games.forEach(game => {
       players;
       const player_id = game.relationships.user.data.id;
@@ -337,10 +345,12 @@ const showScoreboard = () => {
         .name;
       const boardLi = document.createElement("li");
       boardLi.dataset.game_id = game.id;
-      boardLi.innerText = `Player: ${player_name}, Score ${
+      const hrefForLi = document.createElement("a")
+      hrefForLi.href = "#"
+      hrefForLi.innerText = `Player: ${player_name}, Score ${
         game.attributes.score
-      }!`;
-
+      }!`
+      boardLi.appendChild(hrefForLi)
       boardUl.appendChild(boardLi);
     });
 

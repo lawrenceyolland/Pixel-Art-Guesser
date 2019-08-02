@@ -1,0 +1,43 @@
+.leaderboard {
+    margin: auto;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(255, 115, 0);
+}
+
+ul {
+    margin: 300px auto;
+    list-style: none;
+    border: 5px #adfcff solid;
+    border-radius: 5px;
+    width: 650px;
+    padding: 20px;
+    background-color: rgb(255, 250, 245, 0.1);
+}
+
+ul p {
+    text-align: center;
+    color: #aa3600;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+
+li {
+
+    text-align: center;
+    line-height: 2.4em;
+    border-bottom: dotted 1px #adfcff;
+}
+
+li:last-child {
+    border: none;
+}
+
+li a {
+    color: coral;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: rgb(233, 233, 233);
+    cursor: default;
+}
