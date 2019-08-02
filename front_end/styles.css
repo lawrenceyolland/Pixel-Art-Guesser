@@ -1,0 +1,283 @@
+
+
+.image-container {
+  position: relative;
+  width: 386px;
+  height: 386px;
+}
+
+.image-container .after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 3px;
+}
+
+table {
+  border-spacing: 0; /* Removes cell spacing */
+  border-collapse: collapse;
+  border-radius: 5px;
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.2); */
+  left: 50%;
+}
+
+td {
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding: 0px;
+  /* margin: 1px; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+td:hover {
+  border: 1px solid grey;
+}
+
+.save-redraw-button,
+.back-to-menu,
+.history-button {
+  width: 40%;
+  padding: 10px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
+  font-family: "Press Start 2P", cursive;
+  color: grey;
+}
+
+.user-button {
+  width: 12%;
+  padding: 5px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
+  font-family: "Press Start 2P", cursive;
+  color: grey;
+}
+
+.selector-container {
+  position: absolute;
+  width: 400px;
+  height: 280px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.selector-container-endgame {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+}
+
+.player-choices {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  /* top: 40%; */
+  font-family: "Press Start 2P", cursive;
+}
+
+.menu-title,
+.game-header {
+  color: white;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  -o-transition: color 1s;
+  transition: color 1s;
+}
+
+.menu-title[data-on="true"]:hover {
+  color: burlywood;
+}
+
+.menu-title[data-on="true"]:hover:before {
+  content: "> ";
+}
+
+.menu-title[data-on="true"]:hover:after {
+  content: " <";
+}
+
+.menu-title[data-on="true"] {
+  color: burlywood;
+}
+
+.menu-title[data-on="true"]:before {
+  content: "> ";
+}
+
+.menu-title[data-on="true"]:after {
+  content: " <";
+}
+
+.game-over-header[data-on="true"]:hover {
+  color: white;
+}
+.game-over-header[data-on="true"]:hover:before {
+  content: "> ";
+}
+
+.game-over-header[data-on="true"]:hover:after {
+  content: " <";
+}
+
+.game-over-header[data-on="true"] {
+  color: white;
+}
+.game-over-header[data-on="true"]:before {
+  content: "> ";
+}
+
+.game-over-header[data-on="true"]:after {
+  content: " <";
+}
+
+p {
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+/* ~~~~~~~~~ */
+
+.game-header {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  top: 10%;
+  font-family: "Press Start 2P", cursive;
+}
+
+.image-showcase {
+  margin: 70px 0 0 50px;
+}
+
+pixelArtContainer {
+  position: absolute;
+  z-index: 15;
+  top: 30%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: white;
+}
+
+form {
+  width: 100%;
+}
+
+/* Color Picker */
+.inp {
+  border: 1px solid #949494;
+  border-radius: 3px;
+  margin: 0 3px 0 0;
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 70%;
+}
+
+.color-palette {
+  height: 100px;
+  width: 100px;
+  background: red;
+  display: none;
+}
+
+.palette {
+  margin-top: 5px;
+  width: 270px;
+  height: 220px;
+  background: black;
+  border: 0px solid #bcbcbc;
+  border-radius: 1px;
+  display: none;
+  padding: 1px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.color-option {
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  cursor: pointer;
+  float: left;
+  border-radius: 4px;
+}
+
+#colorPicker {
+  border-right: 10px solid #f9009a;
+}
+
+/* STYLING FOR HISTORY PAGE */
+.history_main_div {
+  position: absolute;
+  z-index: 15;
+  text-align: center;
+}
+
+.art_div {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  width: 400px;
+  height: 400px;
+  display: inline-grid;
+  margin: 0 10px 10px 0;
+}
+
+.pixel-drawing {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.next,
+.previous,
+.back-button {
+  width: 12%;
+  padding: 5px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
+  font-family: "Press Start 2P", cursive;
+  color: grey;
+}
+
+.previous:before {
+  content: "< ";
+}
+
+.next:after {
+  content: " >";
+}
+
+.art-title {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  font-family: "Press Start 2P", cursive;
+}

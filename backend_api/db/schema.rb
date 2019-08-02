@@ -10,34 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_29_160748) do
+ActiveRecord::Schema.define(version: 2019_07_31_112146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "arts", force: :cascade do |t|
-    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.bigint "user_id"
-    t.bigint "game_id"
-    t.index ["category_id"], name: "index_arts_on_category_id"
-    t.index ["game_id"], name: "index_arts_on_game_id"
-    t.index ["user_id"], name: "index_arts_on_user_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "img_url"
   end
 
   create_table "games", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "result"
     t.integer "score"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
@@ -48,8 +36,5 @@ ActiveRecord::Schema.define(version: 2019_07_29_160748) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "arts", "categories"
-  add_foreign_key "arts", "games"
-  add_foreign_key "arts", "users"
   add_foreign_key "games", "users"
 end
