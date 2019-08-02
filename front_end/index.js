@@ -35,28 +35,6 @@ const guessSomething = () => {
     });
   };
 
-  //   spaContainer.innerHTML = "";
-  //   spaContainer.innerHTML = `
-  //   <div class="image-container">
-  //   <img src="http://lorempixel.com/200/300" />
-  //   <div class="after"></div>
-  // </div>
-  // `;
-
-  //   const overlay = document.querySelector(".after");
-  //   let height = 100;
-
-  //   const runReveal = () => {
-  //     overlay.style.height = `${height}%`;
-  //     t = setTimeout(() => {
-  //       if (height != 0) {
-  //         height -= 5;
-  //         runReveal();
-  //         console.log(height);
-  //       }
-  //     }, 2000);
-  //   };
-
   const appendNewGameForm = () => {
     spaContainer.innerHTML = "";
 
@@ -71,6 +49,8 @@ const guessSomething = () => {
     const newInput = document.createElement("input");
     newInput.type = "text";
     newInput.id = "user_name";
+    newInput.className = "inp";
+
     const newButton = document.createElement("button");
     newButton.type = "submit";
     newButton.className = "user-button";
@@ -171,11 +151,11 @@ const guessSomething = () => {
       t = setTimeout(() => {
         if (height != 0) {
           height -= 5;
-          globalScore = height
+          globalScore = height;
           runReveal();
           console.log(height);
-        } else { 
-          fetchPostGame(height, user)
+        } else {
+          fetchPostGame(height, user);
         }
       }, 2000);
     };
@@ -408,8 +388,6 @@ const history = () => {
     const previousButton = document.createElement("button");
     previousButton.setAttribute("class", "history-button previous");
     previousButton.innerText = "Previous";
-    // previous button should be disable by default
-    // previousButton.setAttribute("disabled", true)
 
     previousButton.addEventListener("click", event =>
       previousHistoryPage(event)
@@ -421,12 +399,14 @@ const history = () => {
 
     nextButton.addEventListener("click", event => nextHistoryPage(event));
 
-    const pageArts = document.createElement("p");
-    pageArts.innerText = `This Page Art #: ${arts.data.length}`;
+    const backToMenu = document.createElement("button");
+    backToMenu.setAttribute("class", "back-to-menu back-button");
+    backToMenu.innerText = "Back to Menu";
+    backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
+  
+    backToMenu.addEventListener("click", playerChoice);
 
-    historyDiv.append(previousButton, nextButton, pageArts);
-
-    spaContainer.appendChild(historyDiv);
+    spaContainer.append(previousButton, nextButton, backToMenu, historyDiv);
 
     arts.data.forEach(art => {
       const eachArtDivElem = document.createElement("div");
@@ -437,9 +417,10 @@ const history = () => {
       eachArtImg.setAttribute("src", art.attributes.img_url);
       eachArtImg.setAttribute("class", "img pixel-drawing");
 
-      const eachPArtElem = document.createElement("p");
-      eachPArtElem.innerText = art.attributes.title;
-      eachArtDivElem.append(eachArtImg, eachPArtElem);
+      const artTitle = document.createElement("p");
+      artTitle.innerText = art.attributes.title;
+      artTitle.className = "art-title"
+      eachArtDivElem.append(artTitle, eachArtImg);
 
       historyDiv.appendChild(eachArtDivElem);
     });
@@ -450,12 +431,12 @@ const history = () => {
 
 const playerChoice = () => {
   // body.style.backgroundImage = "none";
-  body.style.backgroundImage = 'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")'
-  body.style.backgroundSize = 'cover';
+  body.style.backgroundImage =
+    'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")';
+  body.style.backgroundSize = "cover";
   body.style.backgroundPosition = "center center";
   body.style.backgroundRepeat = "no-repeat";
   body.style.backgroundAttachment = "fixed";
- 
 
   spaContainer.innerHTML = "";
 
@@ -596,13 +577,13 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
-  // const selectorContainer = document.querySelector(".selector-container");
-  // if (selectorContainer) spaContainer.removeChild(selectorContainer);
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
   imageShowcase.setAttribute("class", "image-showcase");
   spaContainer.append(pixelArtContainer, imageShowcase);
+
+  pixelArtContainer.style.background = "none";
 
   // Form functions
   const form = document.createElement("form");
@@ -612,7 +593,7 @@ const makeArt = () => {
   input.setAttribute("type", "text");
   input.setAttribute("class", "inp");
   input.setAttribute("id", "colorPicker");
-  input.setAttribute("placeholder", "Choose a color");
+  input.setAttribute("placeholder", "choose a color");
 
   const inputTitle = document.createElement("input");
   inputTitle.setAttribute("type", "text");
@@ -630,6 +611,8 @@ const makeArt = () => {
     if (colorPalette.mouseIsOver === false) {
       colorPalette.style.display = "none";
       colorInput.style.borderRight = `10px solid ${colorInput.value}`;
+      inputTitle.style.borderRight = `10px solid ${colorInput.value}`;
+      table.style.border = `5px solid ${colorInput.value}`;
     }
   };
 
@@ -770,6 +753,12 @@ const makeArt = () => {
     let color = rgbToHex(e.target.style.backgroundColor);
     colorInput.value = color;
     colorInput.style.borderRight = `10px solid ${color}`;
+    colorInput.style.color = `${colorInput.value}`;
+
+    inputTitle.style.borderRight = `10px solid ${colorInput.value}`;
+    inputTitle.style.color = `${colorInput.value}`;
+
+    table.style.border = `5px solid ${colorInput.value}`;
     colorPalette.style.display = "none";
   };
 
@@ -780,6 +769,10 @@ const makeArt = () => {
   colorInput.addEventListener("focusout", hideColorPalette);
   colorPalette.mouseIsOver = false;
   colorInput.style.borderRight = `10px solid ${colorInput.value}`;
+  colorInput.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
+
+  inputTitle.style.borderRight = `10px solid `;
+  inputTitle.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
 
   colorPalette.onmouseover = () => (colorPalette.mouseIsOver = true);
   colorPalette.onmouseout = () => (colorPalette.mouseIsOver = false);
@@ -787,6 +780,7 @@ const makeArt = () => {
   const saveRedrawButton = document.createElement("button");
   saveRedrawButton.setAttribute("class", "save-redraw-button");
   saveRedrawButton.innerText = "Save Image";
+  saveRedrawButton.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
 
   pixelArtContainer.append(saveRedrawButton);
 
@@ -805,6 +799,11 @@ const makeArt = () => {
   };
 
   const saveImage = () => {
+    cells.forEach(c => {
+      if (c.style.backgroundColor === "") {
+        c.style.backgroundColor = "white";
+      }
+    });
     html2canvas(table, {
       onrendered: canvas => {
         const postData = {
@@ -837,6 +836,7 @@ const makeArt = () => {
 
   const addRemoveColor = e => {
     if (e.target.style.backgroundColor === "") {
+      // fix this so it odesnt paint transparent
       e.target.style.backgroundColor = colorInput.value;
     } else {
       e.target.style.backgroundColor = "";
@@ -851,10 +851,12 @@ const makeArt = () => {
   // Table functions
   const table = document.createElement("table");
   table.setAttribute("id", "capture");
+  table.style.border = `5px solid ${colorInput.value}`;
 
   const backToMenu = document.createElement("button");
   backToMenu.setAttribute("class", "back-to-menu");
   backToMenu.innerText = "Back to Menu";
+  backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
 
   backToMenu.addEventListener("click", playerChoice);
 
@@ -871,6 +873,8 @@ const makeArt = () => {
     }
     table.append(row);
   }
+
+  table.style.boxShadow = "0px 0px 10px 10px rgba(0, 0, 0, 0.6)";
 
   const cells = document.querySelectorAll("td");
 

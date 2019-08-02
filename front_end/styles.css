@@ -17,10 +17,10 @@
 
 table {
   border-spacing: 0; /* Removes cell spacing */
-  /* border-collapse: collapse; */
-  border: 1px solid grey;
+  border-collapse: collapse;
   border-radius: 5px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 5px 5px rgba(0, 0, 0, 0.2); */
+  left: 50%;
 }
 
 td {
@@ -29,7 +29,7 @@ td {
   height: 20px;
   float: left;
   padding: 0px;
-  margin: 1px;
+  /* margin: 1px; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
 }
@@ -41,10 +41,23 @@ td:hover {
 .save-redraw-button,
 .back-to-menu,
 .history-button {
-  width: 100px;
-  margin: 5px 5px 5px 0;
+  width: 40%;
+  padding: 10px;
+  margin: 8px 8px 8px 0;
   border: 1px solid #949494;
   border-radius: 3px;
+  font-family: "Press Start 2P", cursive;
+  color: grey;
+}
+
+.user-button {
+  width: 12%;
+  padding: 5px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
+  font-family: "Press Start 2P", cursive;
+  color: grey;
 }
 
 .selector-container {
@@ -72,11 +85,16 @@ td:hover {
 .menu-title,
 .game-header {
   color: white;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  -o-transition: color 1s;
+  transition: color 1s;
 }
 
 .menu-title[data-on="true"]:hover {
-  color: #f9009a;
+  color: burlywood;
 }
+
 .menu-title[data-on="true"]:hover:before {
   content: "> ";
 }
@@ -86,8 +104,9 @@ td:hover {
 }
 
 .menu-title[data-on="true"] {
-  color: #f9009a;
+  color: burlywood;
 }
+
 .menu-title[data-on="true"]:before {
   content: "> ";
 }
@@ -118,6 +137,11 @@ td:hover {
 
 .game-over-header[data-on="true"]:after {
   content: " <";
+}
+
+p {
+  color: white;
+  font-family: "Press Start 2P", cursive;
 }
 
 /* ~~~~~~~~~ */
@@ -214,7 +238,19 @@ form {
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative;
+  /* font-family: "Press Start 2P", cursive; */
+}
+
+.next,
+.previous,
+.back-button {
+  width: 12%;
+  padding: 5px;
+  margin: 8px 8px 8px 0;
+  border: 1px solid #949494;
+  border-radius: 3px;
   font-family: "Press Start 2P", cursive;
+  color: grey;
 }
 
 .previous:before {
@@ -223,4 +259,9 @@ form {
 
 .next:after {
   content: " >";
+}
+
+.art-title {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); */
 }
