@@ -2,6 +2,8 @@ const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
 
+
+
 const baseUrlArts = "http://localhost:3000//api/v1/arts";
 const baseUrlUsers = "http://localhost:3000//api/v1/users";
 const baseUrlGames = "http://localhost:3000//api/v1/games";
@@ -18,9 +20,14 @@ const withMouseOver = withEvent("mouseover");
 const withMouseEnter = withEvent("mouseenter");
 const withMouseLeave = withEvent("mouseleave");
 
+const removeContainer = () => {
+  const title = document.querySelector(".title-container")
+  body.removeChild(title)
+}
+
 const guessSomething = () => {
   //---- appendNewGameForm()
-
+  removeContainer()
   const fetchPostNewUser = name_value => {
     return fetch(baseUrlUsers, {
       method: "POST",
@@ -56,11 +63,12 @@ const guessSomething = () => {
     newButton.className = "user-button";
     newButton.innerText = "New Player!";
     newUserForm.addEventListener("submit", event => addingUser(event));
-    newUserForm.append(newInput, newButton);
+    
+    newUserForm.append(newInput);
 
-    newSectionUser.append(newTextP, newUserForm);
+    newSectionUser.append(newTextP, newUserForm, newButton);
 
-    spaContainer.appendChild(newSectionUser);
+    spaContainer.append(newSectionUser);
   };
 
   appendNewGameForm();
@@ -284,7 +292,8 @@ const guessSomething = () => {
 };
 
 const showScoreboard = () => {
-  console.log("the event listener worked");
+  removeContainer()
+
   spaContainer.innerHTML = "";
   body.style.backgroundImage = "none";
   const fetchScoreBoards = () => {
@@ -354,6 +363,8 @@ const showScoreboard = () => {
 };
 
 const history = () => {
+  removeContainer()
+
   const per_page = n => `/?per_page=9&page=${n}`;
   const headTitle = document.querySelector("#head-title");
   headTitle.dataset.history_page = 1;
@@ -452,6 +463,29 @@ const playerChoice = () => {
   body.style.backgroundAttachment = "fixed";
 
   spaContainer.innerHTML = "";
+
+  const titlecontainer = document.createElement("div")
+  titlecontainer.className = "title-container"
+  const gameTitle = document.createElement("h1");
+  gameTitle.innerText = "Pixel Art: The Game"
+  gameTitle.className = "game-title"
+
+  const gameSubTitle = document.createElement("p")
+  gameSubTitle.innerText = "Create Pixel Art and Guess What Others Have Drawn!"
+  gameSubTitle.className = "game-sub-title"
+
+  const gameCredits = document.createElement("p")
+  gameCredits.innerText = `
+
+
+  Lawrence Yolland & Le Ngo
+
+  
+  `
+  gameCredits.className = "game-credits"
+  gameTitle.append(gameSubTitle, gameCredits)
+  titlecontainer.append(gameTitle)
+  body.append(titlecontainer)
 
   const selectorContainer = document.createElement("div");
   selectorContainer.setAttribute("class", "selector-container");
@@ -590,6 +624,8 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
+  removeContainer()
+
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
