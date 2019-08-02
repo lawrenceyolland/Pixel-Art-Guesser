@@ -35,28 +35,6 @@ const guessSomething = () => {
     });
   };
 
-  //   spaContainer.innerHTML = "";
-  //   spaContainer.innerHTML = `
-  //   <div class="image-container">
-  //   <img src="http://lorempixel.com/200/300" />
-  //   <div class="after"></div>
-  // </div>
-  // `;
-
-  //   const overlay = document.querySelector(".after");
-  //   let height = 100;
-
-  //   const runReveal = () => {
-  //     overlay.style.height = `${height}%`;
-  //     t = setTimeout(() => {
-  //       if (height != 0) {
-  //         height -= 5;
-  //         runReveal();
-  //         console.log(height);
-  //       }
-  //     }, 2000);
-  //   };
-
   const appendNewGameForm = () => {
     spaContainer.innerHTML = "";
 
@@ -842,7 +820,7 @@ const makeArt = () => {
   const changeColor = e => (e.target.style.backgroundColor = colorInput.value);
 
   const addRemoveColor = e => {
-    if (e.target.style.backgroundColor === "") {
+    if (e.target.style.backgroundColor === "") { // fix this so it odesnt paint transparent
       e.target.style.backgroundColor = colorInput.value;
     } else {
       e.target.style.backgroundColor = "";
@@ -876,7 +854,6 @@ const makeArt = () => {
       let cell = document.createElement("td");
       cell.setAttribute("class", `panel-element-${j}`);
       cell.setAttribute("draggable", false);
-      cell.setAttribute("style", "background-color: white");
       row.append(cell);
     }
     table.append(row);
