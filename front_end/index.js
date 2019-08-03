@@ -18,9 +18,14 @@ const withMouseOver = withEvent("mouseover");
 const withMouseEnter = withEvent("mouseenter");
 const withMouseLeave = withEvent("mouseleave");
 
-const guessSomething = () => {
-  //---- appendNewGameForm()
+const removeContainer = () => {
+  const title = document.querySelector(".title-container");
+  // debugger
+  if (!title === false) body.removeChild(title);
+};
 
+const guessSomething = () => {
+  removeContainer();
   const fetchPostNewUser = name_value => {
     return fetch(baseUrlUsers, {
       method: "POST",
@@ -37,30 +42,34 @@ const guessSomething = () => {
 
   const appendNewGameForm = () => {
     spaContainer.innerHTML = "";
+    removeContainer();
 
     const newSectionUser = document.createElement("section");
-    newSectionUser.id = "section-new-user";
+    newSectionUser.setAttribute("id", "section-new-user");
     const newTextP = document.createElement("p");
     newTextP.innerText = "Hello Player! What is your name?";
 
     const newUserForm = document.createElement("form");
-    newUserForm.id = "new-user-form";
+    newUserForm.setAttribute("id", "new-user-form");
 
     const newInput = document.createElement("input");
-    newInput.type = "text";
-    newInput.id = "user_name";
-    newInput.className = "inp";
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("id", "user_name");
+    newInput.setAttribute("class", "inp");
 
     const newButton = document.createElement("button");
-    newButton.type = "submit";
-    newButton.className = "user-button";
-    newButton.innerText = "New Player!";
+    newButton.setAttribute("type", "submit");
+    newButton.setAttribute("type", "submit");
+    newButton.setAttribute("class", "user-button");
+    newButton.innerText = "New Player! hit enter lol";
+
     newUserForm.addEventListener("submit", event => addingUser(event));
-    newUserForm.append(newInput, newButton);
 
-    newSectionUser.append(newTextP, newUserForm);
+    newUserForm.append(newInput);
 
-    spaContainer.appendChild(newSectionUser);
+    newSectionUser.append(newTextP, newUserForm, newButton);
+
+    spaContainer.append(newSectionUser);
   };
 
   appendNewGameForm();
@@ -96,12 +105,12 @@ const guessSomething = () => {
     spaContainer.innerHTML = "";
     fetchAllArts().then(arts => appendRandomArt(arts, user));
   };
-  
-  // let counter = 1
+
   let globalScore = 0;
 
   const appendRandomArt = (arts, user) => {
-    const random_number = Math.floor(Math.random(arts.data.length) * 10);
+    const random_number = Math.floor(Math.random() * arts.data.length) + 1;
+
     const picked_art = arts.data[random_number];
 
     let height = 100;
@@ -109,28 +118,29 @@ const guessSomething = () => {
 
     const artDiv = document.createElement("div");
     artDiv.setAttribute("class", "image-container");
-    artDiv.id = "div-art-guess";
+    artDiv.setAttribute("id", "div-art-guess");
     artDiv.dataset.user_id = user.id;
     artDiv.dataset.img_id = picked_art.id;
 
     const artImg = document.createElement("img");
     artImg.src = picked_art.attributes.img_url;
-    artImg.style.display = "none"
+    artImg.setAttribute("style", "display: none");
 
     const overlayDiv = document.createElement("div");
     overlayDiv.setAttribute("class", "after");
-    // const overlay = document.querySelector(".after");
-    overlayDiv.style.height = `100%`;
-    overlayDiv.style.background = `rgb(0,0,0)`;
+    overlayDiv.setAttribute("style", "height: 100%");
+    overlayDiv.setAttribute("style", "background: rgb(0,0,0)");
 
     const guessForm = document.createElement("form");
-    guessForm.id = "guess-form";
+    guessForm.setAttribute("id", "guess-form");
 
     const guessFormLabel = document.createElement("label");
+    guessFormLabel.for = "guess_input";
 
     const guessFormInput = document.createElement("input");
-    guessFormInput.id = "guess_input";
-    guessFormLabel.for = "guess_input";
+    guessFormInput.setAttribute("id", "guess_input")
+    guessFormInput.setAttribute("class", "guess-inp")
+
     guessFormInput.type = "text";
 
     const guessFormButton = document.createElement("button");
@@ -138,23 +148,21 @@ const guessSomething = () => {
     guessFormButton.className = "guess-button";
     const title = picked_art.attributes.title;
 
-    guessForm.addEventListener("submit", event =>{
-      checkAnswer(event, title, user)
-    }
-    );
+    guessForm.addEventListener("submit", event => {
+      checkAnswer(event, title, user);
+    });
 
     guessForm.append(guessFormLabel, guessFormInput, guessFormButton);
 
     artDiv.append(overlayDiv, artImg, guessForm);
 
     spaContainer.append(artDiv);
-
     const runReveal = () => {
       t = setTimeout(() => {
         if (height != 0) {
           height -= 1;
           trans -= 0.01;
-          artImg.style.display = "block"
+          artImg.style.display = "block";
           overlayDiv.style.height = `${height}%`;
           overlayDiv.style.background = `rgba(0,0,0,${trans})`;
           runReveal();
@@ -174,7 +182,7 @@ const guessSomething = () => {
     const answer_downcase = answer.toLowerCase().trim();
 
     if (title_downcase.valueOf() === answer_downcase.valueOf()) {
-      globalScore+=100
+      globalScore += 100;
       assignArtToGuess(user);
     } else {
       fetchPostGame(globalScore, user).then(endGame);
@@ -198,7 +206,7 @@ const guessSomething = () => {
 
   const endGame = () => {
     spaContainer.innerHTML = "";
-
+    removeContainer();
     const endMessage = document.createElement("h3");
     endMessage.innerText = `Game Over: ${globalScore}`;
 
@@ -206,7 +214,7 @@ const guessSomething = () => {
     body.style.backgroundImage = `url(${im})`;
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundSize = "cover";
-    body.style.backgroundAttachment = "fixed";
+    // body.style.backgroundAttachment = "fixed";
 
     const selectorContainer = document.createElement("div");
     selectorContainer.setAttribute("class", "selector-container-endgame");
@@ -286,7 +294,8 @@ const guessSomething = () => {
 };
 
 const showScoreboard = () => {
-  console.log("the event listener worked");
+  removeContainer();
+
   spaContainer.innerHTML = "";
   body.style.backgroundImage = "none";
   const fetchScoreBoards = () => {
@@ -308,9 +317,11 @@ const showScoreboard = () => {
   };
 
   const appendBodyWithLeaderBoards = ranking => {
-
-    selectedBody = document.querySelector("body")
-    selectedBody.style.backgroundImage = "url('https://media.giphy.com/media/TnFpifTlxvjkA/giphy.gif')"
+    body.style.backgroundImage =
+      "url('https://media.giphy.com/media/TnFpifTlxvjkA/giphy.gif')";
+    body.style.backgroundSize = "cover";
+    body.style.backgroundPosition = "center";
+    body.style.backgroundRepeat = "no-repeat";
 
     const games = ranking[0];
     const players = ranking[1];
@@ -320,9 +331,9 @@ const showScoreboard = () => {
 
     const boardUl = document.createElement("ul");
     boardUl.className = "boardul";
-    const newPTitle = document.createElement("p")
-    newPTitle.innerText = "TOP 10 Players!!!!!"
-    boardUl.appendChild(newPTitle)
+    const newPTitle = document.createElement("p");
+    newPTitle.innerText = "TOP 10 Players!!!!!";
+    boardUl.appendChild(newPTitle);
 
     games.forEach(game => {
       players;
@@ -331,12 +342,12 @@ const showScoreboard = () => {
         .name;
       const boardLi = document.createElement("li");
       boardLi.dataset.game_id = game.id;
-      const hrefForLi = document.createElement("a")
-      hrefForLi.href = "#"
+      const hrefForLi = document.createElement("a");
+      hrefForLi.href = "#";
       hrefForLi.innerText = `Player: ${player_name}, Score ${
         game.attributes.score
-      }!`
-      boardLi.appendChild(hrefForLi)
+      }!`;
+      boardLi.appendChild(hrefForLi);
       boardUl.append(boardLi);
     });
 
@@ -344,9 +355,8 @@ const showScoreboard = () => {
     backToMenu.setAttribute("class", "back-to-menu back-button");
     backToMenu.innerText = "Back to Menu";
     backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
-  
-    backToMenu.addEventListener("click", playerChoice);
 
+    backToMenu.addEventListener("click", playerChoice);
 
     boardDiv.append(backToMenu, boardUl);
     spaContainer.append(boardDiv);
@@ -355,6 +365,8 @@ const showScoreboard = () => {
 };
 
 const history = () => {
+  removeContainer();
+
   const per_page = n => `/?per_page=9&page=${n}`;
   const headTitle = document.querySelector("#head-title");
   headTitle.dataset.history_page = 1;
@@ -417,7 +429,7 @@ const history = () => {
     backToMenu.setAttribute("class", "back-to-menu back-button");
     backToMenu.innerText = "Back to Menu";
     backToMenu.style.boxShadow = "0px 0px 5px 5px rgba(0, 0, 0, 0.6)";
-  
+
     backToMenu.addEventListener("click", playerChoice);
 
     spaContainer.append(previousButton, nextButton, backToMenu, historyDiv);
@@ -433,7 +445,7 @@ const history = () => {
 
       const artTitle = document.createElement("p");
       artTitle.innerText = art.attributes.title;
-      artTitle.className = "art-title"
+      artTitle.className = "art-title";
       eachArtDivElem.append(artTitle, eachArtImg);
 
       historyDiv.appendChild(eachArtDivElem);
@@ -448,11 +460,34 @@ const playerChoice = () => {
   body.style.backgroundImage =
     'url("https://media.giphy.com/media/ouYdqNNhIveCI/giphy.gif")';
   body.style.backgroundSize = "cover";
-  body.style.backgroundPosition = "center center";
+  body.style.backgroundPosition = "center";
   body.style.backgroundRepeat = "no-repeat";
   body.style.backgroundAttachment = "fixed";
 
   spaContainer.innerHTML = "";
+
+  const titlecontainer = document.createElement("div");
+  titlecontainer.className = "title-container";
+  const gameTitle = document.createElement("h1");
+  gameTitle.innerText = "Pixel Art: The Game";
+  gameTitle.className = "game-title";
+
+  const gameSubTitle = document.createElement("p");
+  gameSubTitle.innerText = "Create Pixel Art and Guess What Others Have Drawn!";
+  gameSubTitle.className = "game-sub-title";
+
+  const gameCredits = document.createElement("p");
+  gameCredits.innerText = `
+
+
+  Lawrence Yolland & Le Ngo
+
+
+  `;
+  gameCredits.className = "game-credits";
+  gameTitle.append(gameSubTitle, gameCredits);
+  titlecontainer.append(gameTitle);
+  body.append(titlecontainer);
 
   const selectorContainer = document.createElement("div");
   selectorContainer.setAttribute("class", "selector-container");
@@ -460,6 +495,7 @@ const playerChoice = () => {
   const gameHeader = document.createElement("h2");
   gameHeader.setAttribute("class", "game-header");
   gameHeader.innerText = "Play a New Game";
+  gameHeader.setAttribute("style", "text-decoration: underline");
 
   const playerOneHeader = document.createElement("h3");
   playerOneHeader.setAttribute("class", "menu-title player-choices drawer");
@@ -591,6 +627,8 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
+  removeContainer();
+
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
   const imageShowcase = document.createElement("imageShowcase");
@@ -601,6 +639,7 @@ const makeArt = () => {
 
   // Form functions
   const form = document.createElement("form");
+  form;
   pixelArtContainer.append(form);
 
   const input = document.createElement("input");
@@ -850,7 +889,6 @@ const makeArt = () => {
 
   const addRemoveColor = e => {
     if (e.target.style.backgroundColor === "") {
-      // fix this so it odesnt paint transparent
       e.target.style.backgroundColor = colorInput.value;
     } else {
       e.target.style.backgroundColor = "";
