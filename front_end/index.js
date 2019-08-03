@@ -2,8 +2,6 @@ const body = document.querySelector("body");
 const spaContainer = document.createElement("spa");
 body.append(spaContainer);
 
-
-
 const baseUrlArts = "http://localhost:3000//api/v1/arts";
 const baseUrlUsers = "http://localhost:3000//api/v1/users";
 const baseUrlGames = "http://localhost:3000//api/v1/games";
@@ -21,13 +19,13 @@ const withMouseEnter = withEvent("mouseenter");
 const withMouseLeave = withEvent("mouseleave");
 
 const removeContainer = () => {
-  const title = document.querySelector(".title-container")
-  body.removeChild(title)
-}
+  const title = document.querySelector(".title-container");
+  // debugger
+  if (!title === false) body.removeChild(title);
+};
 
 const guessSomething = () => {
-  //---- appendNewGameForm()
-  removeContainer()
+  removeContainer();
   const fetchPostNewUser = name_value => {
     return fetch(baseUrlUsers, {
       method: "POST",
@@ -44,26 +42,29 @@ const guessSomething = () => {
 
   const appendNewGameForm = () => {
     spaContainer.innerHTML = "";
+    removeContainer();
 
     const newSectionUser = document.createElement("section");
-    newSectionUser.id = "section-new-user";
+    newSectionUser.setAttribute("id", "section-new-user");
     const newTextP = document.createElement("p");
     newTextP.innerText = "Hello Player! What is your name?";
 
     const newUserForm = document.createElement("form");
-    newUserForm.id = "new-user-form";
+    newUserForm.setAttribute("id", "new-user-form");
 
     const newInput = document.createElement("input");
-    newInput.type = "text";
-    newInput.id = "user_name";
-    newInput.className = "inp";
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("id", "user_name");
+    newInput.setAttribute("class", "inp");
 
     const newButton = document.createElement("button");
-    newButton.type = "submit";
-    newButton.className = "user-button";
-    newButton.innerText = "New Player!";
+    newButton.setAttribute("type", "submit");
+    newButton.setAttribute("type", "submit");
+    newButton.setAttribute("class", "user-button");
+    newButton.innerText = "New Player! hit enter lol";
+
     newUserForm.addEventListener("submit", event => addingUser(event));
-    
+
     newUserForm.append(newInput);
 
     newSectionUser.append(newTextP, newUserForm, newButton);
@@ -108,7 +109,8 @@ const guessSomething = () => {
   let globalScore = 0;
 
   const appendRandomArt = (arts, user) => {
-    const random_number = Math.floor(Math.random(arts.data.length) * 10);
+    const random_number = Math.floor(Math.random() * arts.data.length) + 1;
+
     const picked_art = arts.data[random_number];
 
     let height = 100;
@@ -116,29 +118,29 @@ const guessSomething = () => {
 
     const artDiv = document.createElement("div");
     artDiv.setAttribute("class", "image-container");
-    artDiv.id = "div-art-guess";
+    artDiv.setAttribute("id", "div-art-guess");
     artDiv.dataset.user_id = user.id;
     artDiv.dataset.img_id = picked_art.id;
 
     const artImg = document.createElement("img");
     artImg.src = picked_art.attributes.img_url;
-    artImg.style.display = "none";
+    artImg.setAttribute("style", "display: none");
 
     const overlayDiv = document.createElement("div");
     overlayDiv.setAttribute("class", "after");
-    // const overlay = document.querySelector(".after");
-    overlayDiv.style.height = `100%`;
-    overlayDiv.style.background = `rgb(0,0,0)`;
+    overlayDiv.setAttribute("style", "height: 100%");
+    overlayDiv.setAttribute("style", "background: rgb(0,0,0)");
 
     const guessForm = document.createElement("form");
-    guessForm.id = "guess-form";
+    guessForm.setAttribute("id", "guess-form");
 
     const guessFormLabel = document.createElement("label");
+    guessFormLabel.for = "guess_input";
 
     const guessFormInput = document.createElement("input");
-    guessFormInput.id = "guess_input";
-    guessFormInput.className = "guess-inp"
-    guessFormLabel.for = "guess_input";
+    guessFormInput.setAttribute("id", "guess_input")
+    guessFormInput.setAttribute("class", "guess-inp")
+
     guessFormInput.type = "text";
 
     const guessFormButton = document.createElement("button");
@@ -169,7 +171,7 @@ const guessSomething = () => {
         }
       }, 100);
     };
-    
+
     runReveal();
   };
 
@@ -204,7 +206,7 @@ const guessSomething = () => {
 
   const endGame = () => {
     spaContainer.innerHTML = "";
-
+    removeContainer();
     const endMessage = document.createElement("h3");
     endMessage.innerText = `Game Over: ${globalScore}`;
 
@@ -292,7 +294,7 @@ const guessSomething = () => {
 };
 
 const showScoreboard = () => {
-  removeContainer()
+  removeContainer();
 
   spaContainer.innerHTML = "";
   body.style.backgroundImage = "none";
@@ -363,7 +365,7 @@ const showScoreboard = () => {
 };
 
 const history = () => {
-  removeContainer()
+  removeContainer();
 
   const per_page = n => `/?per_page=9&page=${n}`;
   const headTitle = document.querySelector("#head-title");
@@ -464,28 +466,28 @@ const playerChoice = () => {
 
   spaContainer.innerHTML = "";
 
-  const titlecontainer = document.createElement("div")
-  titlecontainer.className = "title-container"
+  const titlecontainer = document.createElement("div");
+  titlecontainer.className = "title-container";
   const gameTitle = document.createElement("h1");
-  gameTitle.innerText = "Pixel Art: The Game"
-  gameTitle.className = "game-title"
+  gameTitle.innerText = "Pixel Art: The Game";
+  gameTitle.className = "game-title";
 
-  const gameSubTitle = document.createElement("p")
-  gameSubTitle.innerText = "Create Pixel Art and Guess What Others Have Drawn!"
-  gameSubTitle.className = "game-sub-title"
+  const gameSubTitle = document.createElement("p");
+  gameSubTitle.innerText = "Create Pixel Art and Guess What Others Have Drawn!";
+  gameSubTitle.className = "game-sub-title";
 
-  const gameCredits = document.createElement("p")
+  const gameCredits = document.createElement("p");
   gameCredits.innerText = `
 
 
   Lawrence Yolland & Le Ngo
 
-  
-  `
-  gameCredits.className = "game-credits"
-  gameTitle.append(gameSubTitle, gameCredits)
-  titlecontainer.append(gameTitle)
-  body.append(titlecontainer)
+
+  `;
+  gameCredits.className = "game-credits";
+  gameTitle.append(gameSubTitle, gameCredits);
+  titlecontainer.append(gameTitle);
+  body.append(titlecontainer);
 
   const selectorContainer = document.createElement("div");
   selectorContainer.setAttribute("class", "selector-container");
@@ -493,6 +495,7 @@ const playerChoice = () => {
   const gameHeader = document.createElement("h2");
   gameHeader.setAttribute("class", "game-header");
   gameHeader.innerText = "Play a New Game";
+  gameHeader.setAttribute("style", "text-decoration: underline");
 
   const playerOneHeader = document.createElement("h3");
   playerOneHeader.setAttribute("class", "menu-title player-choices drawer");
@@ -624,7 +627,7 @@ const playerChoice = () => {
 };
 
 const makeArt = () => {
-  removeContainer()
+  removeContainer();
 
   spaContainer.innerHTML = "";
   const pixelArtContainer = document.createElement("pixelArtContainer");
@@ -635,7 +638,8 @@ const makeArt = () => {
   pixelArtContainer.style.background = "none";
 
   // Form functions
-  const form = document.createElement("form");form
+  const form = document.createElement("form");
+  form;
   pixelArtContainer.append(form);
 
   const input = document.createElement("input");
